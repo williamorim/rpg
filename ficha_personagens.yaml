@@ -1,0 +1,718 @@
+- flip:
+  - nome_personagem: Flip
+  - raca: "Kenku"
+  - classe: "Mago"
+  - idade: 10
+  - altura: 1.5
+  - peso: 42
+  - tamanho: "médio"
+  - deslocamento: 9
+  - idiomas:
+      - "Comum"
+      - "Auran"
+  - pontos_vida: 7
+  - classe_armadura: 13
+  - bonus_proficiencia: 2
+  - habilidades:
+      - forca:
+        - nome: "Força"
+        - valor: 8
+        - modificador: -1
+        - proficiencia : false
+      - destreza:
+        - nome: "Destreza"
+        - valor: 16
+        - modificador: 3
+        - proficiencia : false
+      - constituicao:
+        - nome: "Constituição"
+        - valor: 12
+        - modificador: 1
+        - proficiencia : false
+      - inteligencia:
+        - nome: "Inteligência"
+        - valor: 15
+        - modificador: 2
+        - proficiencia : true
+      - sabedoria:
+        - nome: "Sabedoria"
+        - valor: 11
+        - modificador: 0
+        - proficiencia : true
+      - carisma:
+        - nome: "Carisma"
+        - valor: 13
+        - modificador: 1
+        - proficiencia : false
+  - pericias:
+    - atletismo:
+      - nome: "Atletismo"
+      - proficiencia: false
+      - habilidade_relacionada: "forca"
+    - acrobacia:
+      - nome: "Acrobacia"
+      - proficiencia: false
+      - habilidade_relacionada: "destreza"
+    - furtividade:
+      - nome: "Furtividade"
+      - proficiencia: true
+      - habilidade_relacionada: "destreza"
+    - prestidigitacao:
+      - nome: "Prestidigitação"
+      - proficiencia: true
+      - habilidade_relacionada: "destreza"
+    - arcanismo:
+      - nome: "Arcanismo"
+      - proficiencia: true
+      - habilidade_relacionada: "inteligencia"
+    - historia:
+      - nome: "História"
+      - proficiencia: true
+      - habilidade_relacionada: "inteligencia"
+    - investigacao:
+      - nome: "Investigação"
+      - proficiencia: false
+      - habilidade_relacionada: "inteligencia"
+    - natureza:
+      - nome: "Natureza"
+      - proficiencia: false
+      - habilidade_relacionada: "inteligencia"
+    - religiao:
+      - nome: "Religião"
+      - proficiencia: false
+      - habilidade_relacionada: "inteligencia"
+    - adestrar animais:
+      - nome: "Adestrar Animais"
+      - proficiencia: false
+      - habilidade_relacionada: "sabedoria"
+    - intuicao:
+      - nome: "Intuição"
+      - proficiencia: false
+      - habilidade_relacionada: "sabedoria"
+    - medicina:
+      - nome: "Medicina"
+      - proficiencia: false
+      - habilidade_relacionada: "sabedoria"
+    - percepcao:
+      - nome: "Percepção"
+      - proficiencia: false
+      - habilidade_relacionada: "sabedoria"
+    - sobrevivencia:
+      - nome: "Sobrevivência"
+      - proficiencia: false
+      - habilidade_relacionada: "sabedoria"
+    - atuacao:
+      - nome: "Atuação"
+      - proficiencia: false
+      - habilidade_relacionada: "carisma"
+    - enganacao:
+      - nome: "Enganação"
+      - proficiencia: false
+      - habilidade_relacionada: "carisma"
+    - intimidacao:
+      - nome: "Intimidação"
+      - proficiencia: false
+      - habilidade_relacionada: "carisma"
+    - persuasao:
+      - nome: "Persuasão"
+      - proficiencia: false
+      - habilidade_relacionada: "carisma"
+  - tracos:
+      - falsificacao:
+        - nome: "Perito em Falsificação"
+        - descricao: "Você pode duplicar escrita e artesanato de outras criaturas. <b>Você tem vantagem em todos os testes feitos para produzir falsificações ou duplicatas de objetos existentes.</b>"
+      - treinamento_kenku:
+        - nome: "Treinamento Kenku"
+        - descricao: "Você tem proficiência em <b>Furtividade</b> e <b>Prestidigitação</b>."
+      - mimetismo:
+        - nome: "Mimetismo"
+        - descricao: "Você pode imitar sons que você ouviu, incluindo vozes. Uma criatura que ouve os sons que você faz pode dizer que eles são imitações com um teste bem sucedido de Sabedoria (Intuição), contra seu teste de Carisma (Enganação)"
+  - magias:
+      - misseis_magicos:
+        - nome: "Mísseis Mágicos"
+        - descricao: "Você cria três dardos brilhantes de energia mística. Cada dardo atinge uma criatura, à sua escolha, que você possa ver, dentro do alcance. Um dardo causa 1d4 + 1 de dano de energia ao alvo. Todos os dardos atingem simultaneamente e você pode direciona-los para atingir uma criatura ou várias."
+        - dano: "1d4 + 1 de dano de energia"
+        - alcance: 36
+        - componentes: ["V", "S"]
+      - silencio:
+        - nome: "Silêncio"
+        - descricao: "Pela duração, nenhum som pode ser criado dentro ou atravessar uma esfera de <b>6 metros de raio</b> centrada num ponto, à sua escolha, dentro do alcance. Qualquer criatura ou objeto totalmente dentro da esfera é imune a dano trovejante e as criaturas estarão surdas enquanto estiverem completamente dentro dela. Conjurar magias que incluam a componente verbal é impossível ai."
+        - alcance: 36
+        - componentes: ["V", "S"]
+        - duracao: "Concentração, até 10 minutos"
+  - armas:
+      - adaga:
+        - nome: "Adaga"
+        - dano: "1d4"
+        - tipo_dano: "Perfurante"
+        - propriedades: ["Finesse", "Leve"]
+        - alcance_arremesso: "20/60"
+        - proficiencia: true
+  - equipamentos:
+      - equipamento_1:
+        - nome: "Túnica suja e rasgada"
+        - bonus: ""
+
+- flip2:
+  - nome_personagem: "Flip 2"
+  - raca: "Kenku"
+  - classe: "Mago"
+  - idade: 10
+  - altura: 1.5
+  - peso: 42
+  - tamanho: "médio"
+  - deslocamento: 9
+  - idiomas:
+      - "Comum"
+      - "Auran"
+  - pontos_vida: 7
+  - classe_armadura: 13
+  - bonus_proficiencia: 2
+  - habilidades:
+      - forca:
+        - nome: "Força"
+        - valor: 8
+        - modificador: -1
+        - proficiencia : false
+      - destreza:
+        - nome: "Destreza"
+        - valor: 16
+        - modificador: 3
+        - proficiencia : false
+      - constituicao:
+        - nome: "Constituição"
+        - valor: 12
+        - modificador: 1
+        - proficiencia : false
+      - inteligencia:
+        - nome: "Inteligência"
+        - valor: 15
+        - modificador: 2
+        - proficiencia : true
+      - sabedoria:
+        - nome: "Sabedoria"
+        - valor: 11
+        - modificador: 0
+        - proficiencia : true
+      - carisma:
+        - nome: "Carisma"
+        - valor: 13
+        - modificador: 1
+        - proficiencia : false
+  - pericias:
+    - atletismo:
+      - nome: "Atletismo"
+      - proficiencia: false
+      - habilidade_relacionada: "forca"
+    - acrobacia:
+      - nome: "Acrobacia"
+      - proficiencia: false
+      - habilidade_relacionada: "destreza"
+    - furtividade:
+      - nome: "Furtividade"
+      - proficiencia: true
+      - habilidade_relacionada: "destreza"
+    - prestidigitacao:
+      - nome: "Prestidigitação"
+      - proficiencia: true
+      - habilidade_relacionada: "destreza"
+    - arcanismo:
+      - nome: "Arcanismo"
+      - proficiencia: true
+      - habilidade_relacionada: "inteligencia"
+    - historia:
+      - nome: "História"
+      - proficiencia: true
+      - habilidade_relacionada: "inteligencia"
+    - investigacao:
+      - nome: "Investigação"
+      - proficiencia: false
+      - habilidade_relacionada: "inteligencia"
+    - natureza:
+      - nome: "Natureza"
+      - proficiencia: false
+      - habilidade_relacionada: "inteligencia"
+    - religiao:
+      - nome: "Religião"
+      - proficiencia: false
+      - habilidade_relacionada: "inteligencia"
+    - adestrar animais:
+      - nome: "Adestrar Animais"
+      - proficiencia: false
+      - habilidade_relacionada: "sabedoria"
+    - intuicao:
+      - nome: "Intuição"
+      - proficiencia: false
+      - habilidade_relacionada: "sabedoria"
+    - medicina:
+      - nome: "Medicina"
+      - proficiencia: false
+      - habilidade_relacionada: "sabedoria"
+    - percepcao:
+      - nome: "Percepção"
+      - proficiencia: false
+      - habilidade_relacionada: "sabedoria"
+    - sobrevivencia:
+      - nome: "Sobrevivência"
+      - proficiencia: false
+      - habilidade_relacionada: "sabedoria"
+    - atuacao:
+      - nome: "Atuação"
+      - proficiencia: false
+      - habilidade_relacionada: "carisma"
+    - enganacao:
+      - nome: "Enganação"
+      - proficiencia: false
+      - habilidade_relacionada: "carisma"
+    - intimidacao:
+      - nome: "Intimidação"
+      - proficiencia: false
+      - habilidade_relacionada: "carisma"
+    - persuasao:
+      - nome: "Persuasão"
+      - proficiencia: false
+      - habilidade_relacionada: "carisma"
+  - tracos:
+      - falsificacao:
+        - nome: "Perito em Falsificação"
+        - descricao: "Você pode duplicar escrita e artesanato de outras criaturas. <b>Você tem vantagem em todos os testes feitos para produzir falsificações ou duplicatas de objetos existentes.</b>"
+      - treinamento_kenku:
+        - nome: "Treinamento Kenku"
+        - descricao: "Você tem proficiência em <b>Furtividade</b> e <b>Prestidigitação</b>."
+      - mimetismo:
+        - nome: "Mimetismo"
+        - descricao: "Você pode imitar sons que você ouviu, incluindo vozes. Uma criatura que ouve os sons que você faz pode dizer que eles são imitações com um teste bem sucedido de Sabedoria (Intuição), contra seu teste de Carisma (Enganação)"
+  - magias:
+      - "Mísseis Mágicos"
+      - "Silêncio"
+  - armas:
+      - adaga:
+        - nome: "Adaga"
+        - dano: "1d4"
+        - tipo_dano: "Perfurante"
+        - propriedades: ["Finesse", "Leve"]
+        - alcance_arremesso: "20/60"
+        - proficiencia: true
+
+- flip3:
+  - nome_personagem: "Flip 3"
+  - raca: "Kenku"
+  - classe: "Mago"
+  - idade: 10
+  - altura: 1.5
+  - peso: 42
+  - tamanho: "médio"
+  - deslocamento: 9
+  - idiomas:
+      - "Comum"
+      - "Auran"
+  - pontos_vida: 7
+  - classe_armadura: 13
+  - bonus_proficiencia: 2
+  - habilidades:
+      - forca:
+        - nome: "Força"
+        - valor: 8
+        - modificador: -1
+        - proficiencia : false
+      - destreza:
+        - nome: "Destreza"
+        - valor: 16
+        - modificador: 3
+        - proficiencia : false
+      - constituicao:
+        - nome: "Constituição"
+        - valor: 12
+        - modificador: 1
+        - proficiencia : false
+      - inteligencia:
+        - nome: "Inteligência"
+        - valor: 15
+        - modificador: 2
+        - proficiencia : true
+      - sabedoria:
+        - nome: "Sabedoria"
+        - valor: 11
+        - modificador: 0
+        - proficiencia : true
+      - carisma:
+        - nome: "Carisma"
+        - valor: 13
+        - modificador: 1
+        - proficiencia : false
+  - pericias:
+    - atletismo:
+      - nome: "Atletismo"
+      - proficiencia: false
+      - habilidade_relacionada: "forca"
+    - acrobacia:
+      - nome: "Acrobacia"
+      - proficiencia: false
+      - habilidade_relacionada: "destreza"
+    - furtividade:
+      - nome: "Furtividade"
+      - proficiencia: true
+      - habilidade_relacionada: "destreza"
+    - prestidigitacao:
+      - nome: "Prestidigitação"
+      - proficiencia: true
+      - habilidade_relacionada: "destreza"
+    - arcanismo:
+      - nome: "Arcanismo"
+      - proficiencia: true
+      - habilidade_relacionada: "inteligencia"
+    - historia:
+      - nome: "História"
+      - proficiencia: true
+      - habilidade_relacionada: "inteligencia"
+    - investigacao:
+      - nome: "Investigação"
+      - proficiencia: false
+      - habilidade_relacionada: "inteligencia"
+    - natureza:
+      - nome: "Natureza"
+      - proficiencia: false
+      - habilidade_relacionada: "inteligencia"
+    - religiao:
+      - nome: "Religião"
+      - proficiencia: false
+      - habilidade_relacionada: "inteligencia"
+    - adestrar animais:
+      - nome: "Adestrar Animais"
+      - proficiencia: false
+      - habilidade_relacionada: "sabedoria"
+    - intuicao:
+      - nome: "Intuição"
+      - proficiencia: false
+      - habilidade_relacionada: "sabedoria"
+    - medicina:
+      - nome: "Medicina"
+      - proficiencia: false
+      - habilidade_relacionada: "sabedoria"
+    - percepcao:
+      - nome: "Percepção"
+      - proficiencia: false
+      - habilidade_relacionada: "sabedoria"
+    - sobrevivencia:
+      - nome: "Sobrevivência"
+      - proficiencia: false
+      - habilidade_relacionada: "sabedoria"
+    - atuacao:
+      - nome: "Atuação"
+      - proficiencia: false
+      - habilidade_relacionada: "carisma"
+    - enganacao:
+      - nome: "Enganação"
+      - proficiencia: false
+      - habilidade_relacionada: "carisma"
+    - intimidacao:
+      - nome: "Intimidação"
+      - proficiencia: false
+      - habilidade_relacionada: "carisma"
+    - persuasao:
+      - nome: "Persuasão"
+      - proficiencia: false
+      - habilidade_relacionada: "carisma"
+  - tracos:
+      - falsificacao:
+        - nome: "Perito em Falsificação"
+        - descricao: "Você pode duplicar escrita e artesanato de outras criaturas. <b>Você tem vantagem em todos os testes feitos para produzir falsificações ou duplicatas de objetos existentes.</b>"
+      - treinamento_kenku:
+        - nome: "Treinamento Kenku"
+        - descricao: "Você tem proficiência em <b>Furtividade</b> e <b>Prestidigitação</b>."
+      - mimetismo:
+        - nome: "Mimetismo"
+        - descricao: "Você pode imitar sons que você ouviu, incluindo vozes. Uma criatura que ouve os sons que você faz pode dizer que eles são imitações com um teste bem sucedido de Sabedoria (Intuição), contra seu teste de Carisma (Enganação)"
+  - magias:
+      - "Mísseis Mágicos"
+      - "Silêncio"
+  - armas:
+      - adaga:
+        - nome: "Adaga"
+        - dano: "1d4"
+        - tipo_dano: "Perfurante"
+        - propriedades: ["Finesse", "Leve"]
+        - alcance_arremesso: "20/60"
+        - proficiencia: true
+
+- flip4:
+  - nome_personagem: "Flip 4"
+  - raca: "Kenku"
+  - classe: "Mago"
+  - idade: 10
+  - altura: 1.5
+  - peso: 42
+  - tamanho: "médio"
+  - deslocamento: 9
+  - idiomas:
+      - "Comum"
+      - "Auran"
+  - pontos_vida: 7
+  - classe_armadura: 13
+  - bonus_proficiencia: 2
+  - habilidades:
+      - forca:
+        - nome: "Força"
+        - valor: 8
+        - modificador: -1
+        - proficiencia : false
+      - destreza:
+        - nome: "Destreza"
+        - valor: 16
+        - modificador: 3
+        - proficiencia : false
+      - constituicao:
+        - nome: "Constituição"
+        - valor: 12
+        - modificador: 1
+        - proficiencia : false
+      - inteligencia:
+        - nome: "Inteligência"
+        - valor: 15
+        - modificador: 2
+        - proficiencia : true
+      - sabedoria:
+        - nome: "Sabedoria"
+        - valor: 11
+        - modificador: 0
+        - proficiencia : true
+      - carisma:
+        - nome: "Carisma"
+        - valor: 13
+        - modificador: 1
+        - proficiencia : false
+  - pericias:
+    - atletismo:
+      - nome: "Atletismo"
+      - proficiencia: false
+      - habilidade_relacionada: "forca"
+    - acrobacia:
+      - nome: "Acrobacia"
+      - proficiencia: false
+      - habilidade_relacionada: "destreza"
+    - furtividade:
+      - nome: "Furtividade"
+      - proficiencia: true
+      - habilidade_relacionada: "destreza"
+    - prestidigitacao:
+      - nome: "Prestidigitação"
+      - proficiencia: true
+      - habilidade_relacionada: "destreza"
+    - arcanismo:
+      - nome: "Arcanismo"
+      - proficiencia: true
+      - habilidade_relacionada: "inteligencia"
+    - historia:
+      - nome: "História"
+      - proficiencia: true
+      - habilidade_relacionada: "inteligencia"
+    - investigacao:
+      - nome: "Investigação"
+      - proficiencia: false
+      - habilidade_relacionada: "inteligencia"
+    - natureza:
+      - nome: "Natureza"
+      - proficiencia: false
+      - habilidade_relacionada: "inteligencia"
+    - religiao:
+      - nome: "Religião"
+      - proficiencia: false
+      - habilidade_relacionada: "inteligencia"
+    - adestrar animais:
+      - nome: "Adestrar Animais"
+      - proficiencia: false
+      - habilidade_relacionada: "sabedoria"
+    - intuicao:
+      - nome: "Intuição"
+      - proficiencia: false
+      - habilidade_relacionada: "sabedoria"
+    - medicina:
+      - nome: "Medicina"
+      - proficiencia: false
+      - habilidade_relacionada: "sabedoria"
+    - percepcao:
+      - nome: "Percepção"
+      - proficiencia: false
+      - habilidade_relacionada: "sabedoria"
+    - sobrevivencia:
+      - nome: "Sobrevivência"
+      - proficiencia: false
+      - habilidade_relacionada: "sabedoria"
+    - atuacao:
+      - nome: "Atuação"
+      - proficiencia: false
+      - habilidade_relacionada: "carisma"
+    - enganacao:
+      - nome: "Enganação"
+      - proficiencia: false
+      - habilidade_relacionada: "carisma"
+    - intimidacao:
+      - nome: "Intimidação"
+      - proficiencia: false
+      - habilidade_relacionada: "carisma"
+    - persuasao:
+      - nome: "Persuasão"
+      - proficiencia: false
+      - habilidade_relacionada: "carisma"
+  - tracos:
+      - falsificacao:
+        - nome: "Perito em Falsificação"
+        - descricao: "Você pode duplicar escrita e artesanato de outras criaturas. <b>Você tem vantagem em todos os testes feitos para produzir falsificações ou duplicatas de objetos existentes.</b>"
+      - treinamento_kenku:
+        - nome: "Treinamento Kenku"
+        - descricao: "Você tem proficiência em <b>Furtividade</b> e <b>Prestidigitação</b>."
+      - mimetismo:
+        - nome: "Mimetismo"
+        - descricao: "Você pode imitar sons que você ouviu, incluindo vozes. Uma criatura que ouve os sons que você faz pode dizer que eles são imitações com um teste bem sucedido de Sabedoria (Intuição), contra seu teste de Carisma (Enganação)"
+  - magias:
+      - "Mísseis Mágicos"
+      - "Silêncio"
+  - armas:
+      - adaga:
+        - nome: "Adaga"
+        - dano: "1d4"
+        - tipo_dano: "Perfurante"
+        - propriedades: ["Finesse", "Leve"]
+        - alcance_arremesso: "20/60"
+        - proficiencia: true
+
+- flip5:
+  - nome_personagem: "Flip 5"
+  - raca: "Kenku"
+  - classe: "Mago"
+  - idade: 10
+  - altura: 1.5
+  - peso: 42
+  - tamanho: "médio"
+  - deslocamento: 9
+  - idiomas:
+      - "Comum"
+      - "Auran"
+  - pontos_vida: 7
+  - classe_armadura: 13
+  - bonus_proficiencia: 2
+  - habilidades:
+      - forca:
+        - nome: "Força"
+        - valor: 8
+        - modificador: -1
+        - proficiencia : false
+      - destreza:
+        - nome: "Destreza"
+        - valor: 16
+        - modificador: 3
+        - proficiencia : false
+      - constituicao:
+        - nome: "Constituição"
+        - valor: 12
+        - modificador: 1
+        - proficiencia : false
+      - inteligencia:
+        - nome: "Inteligência"
+        - valor: 15
+        - modificador: 2
+        - proficiencia : true
+      - sabedoria:
+        - nome: "Sabedoria"
+        - valor: 11
+        - modificador: 0
+        - proficiencia : true
+      - carisma:
+        - nome: "Carisma"
+        - valor: 13
+        - modificador: 1
+        - proficiencia : false
+  - pericias:
+    - atletismo:
+      - nome: "Atletismo"
+      - proficiencia: false
+      - habilidade_relacionada: "forca"
+    - acrobacia:
+      - nome: "Acrobacia"
+      - proficiencia: false
+      - habilidade_relacionada: "destreza"
+    - furtividade:
+      - nome: "Furtividade"
+      - proficiencia: true
+      - habilidade_relacionada: "destreza"
+    - prestidigitacao:
+      - nome: "Prestidigitação"
+      - proficiencia: true
+      - habilidade_relacionada: "destreza"
+    - arcanismo:
+      - nome: "Arcanismo"
+      - proficiencia: true
+      - habilidade_relacionada: "inteligencia"
+    - historia:
+      - nome: "História"
+      - proficiencia: true
+      - habilidade_relacionada: "inteligencia"
+    - investigacao:
+      - nome: "Investigação"
+      - proficiencia: false
+      - habilidade_relacionada: "inteligencia"
+    - natureza:
+      - nome: "Natureza"
+      - proficiencia: false
+      - habilidade_relacionada: "inteligencia"
+    - religiao:
+      - nome: "Religião"
+      - proficiencia: false
+      - habilidade_relacionada: "inteligencia"
+    - adestrar animais:
+      - nome: "Adestrar Animais"
+      - proficiencia: false
+      - habilidade_relacionada: "sabedoria"
+    - intuicao:
+      - nome: "Intuição"
+      - proficiencia: false
+      - habilidade_relacionada: "sabedoria"
+    - medicina:
+      - nome: "Medicina"
+      - proficiencia: false
+      - habilidade_relacionada: "sabedoria"
+    - percepcao:
+      - nome: "Percepção"
+      - proficiencia: false
+      - habilidade_relacionada: "sabedoria"
+    - sobrevivencia:
+      - nome: "Sobrevivência"
+      - proficiencia: false
+      - habilidade_relacionada: "sabedoria"
+    - atuacao:
+      - nome: "Atuação"
+      - proficiencia: false
+      - habilidade_relacionada: "carisma"
+    - enganacao:
+      - nome: "Enganação"
+      - proficiencia: false
+      - habilidade_relacionada: "carisma"
+    - intimidacao:
+      - nome: "Intimidação"
+      - proficiencia: false
+      - habilidade_relacionada: "carisma"
+    - persuasao:
+      - nome: "Persuasão"
+      - proficiencia: false
+      - habilidade_relacionada: "carisma"
+  - tracos:
+      - falsificacao:
+        - nome: "Perito em Falsificação"
+        - descricao: "Você pode duplicar escrita e artesanato de outras criaturas. <b>Você tem vantagem em todos os testes feitos para produzir falsificações ou duplicatas de objetos existentes.</b>"
+      - treinamento_kenku:
+        - nome: "Treinamento Kenku"
+        - descricao: "Você tem proficiência em <b>Furtividade</b> e <b>Prestidigitação</b>."
+      - mimetismo:
+        - nome: "Mimetismo"
+        - descricao: "Você pode imitar sons que você ouviu, incluindo vozes. Uma criatura que ouve os sons que você faz pode dizer que eles são imitações com um teste bem sucedido de Sabedoria (Intuição), contra seu teste de Carisma (Enganação)"
+  - magias:
+      - "Mísseis Mágicos"
+      - "Silêncio"
+  - armas:
+      - adaga:
+        - nome: "Adaga"
+        - dano: "1d4"
+        - tipo_dano: "Perfurante"
+        - propriedades: ["Finesse", "Leve"]
+        - alcance_arremesso: "20/60"
+        - proficiencia: true
