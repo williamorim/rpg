@@ -64,8 +64,8 @@ function renderAbility(abilKey, abil){
 function calcSkillBonus(pericia, habilidades, bonusProf){
   const abil = habilidades[pericia.habilidade_relacionada];
   const base = abil ? (abil.modificador || 0) : 0;
-  const prof = pericia.proficiencia ? bonusProf : 0;
-  return base + prof;
+  // Solicitação: não incluir bônus de proficiência no cálculo das perícias
+  return base;
 }
 
 function renderSkills(personagem){
@@ -166,6 +166,17 @@ function buildEquipamentosContent(personagem){
   }).join('');
 }
 
+function buildTracosContent(personagem){
+  const tracos = ensureArrayFromObjectValues(personagem.tracos);
+  if(!tracos.length) return '<p>Nenhum traço cadastrado.</p>';
+  return tracos.map(t => {
+    return `<div class="item">
+      <h5>${t.nome || 'Traço'}</h5>
+      ${t.descricao ? `<p>${t.descricao}</p>` : ''}
+    </div>`;
+  }).join('');
+}
+
 function openModal(title, html){
   const modal = document.getElementById('modal');
   const titleEl = document.getElementById('modal-title');
@@ -214,6 +225,7 @@ function renderCard(personagem){
         ${personagem.raca ? `<span class="chip">${personagem.raca}</span>` : ''}
         ${personagem.classe ? `<span class="chip">${personagem.classe}</span>` : ''}
         ${idiomas ? `<span class="chip">Idiomas: ${idiomas}</span>` : ''}
+        ${typeof (personagem.nivel ?? personagem['nível']) !== 'undefined' ? `<span class="level">Nível ${personagem.nivel ?? personagem['nível']}</span>` : ''}
       </div>
 
       
@@ -232,6 +244,7 @@ function renderCard(personagem){
         <button class="button" data-action="armas" data-char="${personagem.id}">Armas</button>
         <button class="button" data-action="magias" data-char="${personagem.id}">Magias</button>
         <button class="button" data-action="equipamentos" data-char="${personagem.id}">Equipamentos</button>
+        <button class="button" data-action="tracos" data-char="${personagem.id}">Traços</button>
       </div>
     </div>
   </article>`;
@@ -262,6 +275,8 @@ async function main(){
         openModal(`Magias — ${personagem.nome_personagem || personagem.id}`, buildMagiasContent(personagem));
       } else if(action === 'equipamentos'){
         openModal(`Equipamentos — ${personagem.nome_personagem || personagem.id}`, buildEquipamentosContent(personagem));
+      } else if(action === 'tracos'){
+        openModal(`Traços — ${personagem.nome_personagem || personagem.id}`, buildTracosContent(personagem));
       }
     });
 

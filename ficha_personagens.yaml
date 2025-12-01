@@ -2,6 +2,7 @@
   - nome_personagem: Flip
   - raca: "Kenku"
   - classe: "Mago"
+  - nivel: 1
   - idade: 10
   - altura: 1.5
   - peso: 42
@@ -157,6 +158,7 @@
   - nome_personagem: "Flip 2"
   - raca: "Kenku"
   - classe: "Mago"
+  - nivel: 1
   - idade: 10
   - altura: 1.5
   - peso: 42
@@ -298,6 +300,7 @@
   - nome_personagem: "Flip 3"
   - raca: "Kenku"
   - classe: "Mago"
+  - nivel: 1
   - idade: 10
   - altura: 1.5
   - peso: 42
@@ -439,6 +442,7 @@
   - nome_personagem: "Flip 4"
   - raca: "Kenku"
   - classe: "Mago"
+  - nivel: 1
   - idade: 10
   - altura: 1.5
   - peso: 42
@@ -580,6 +584,7 @@
   - nome_personagem: "Flip 5"
   - raca: "Kenku"
   - classe: "Mago"
+  - nivel: 1
   - idade: 10
   - altura: 1.5
   - peso: 42
