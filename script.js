@@ -214,18 +214,18 @@ function renderCard(personagem){
     <div class="card-header">
       <img class="avatar" src="${img}" alt="${personagem.nome_personagem || personagem.id}" onerror="this.src='img/token_${personagem.id}.png'" />
       <div class="card-title">${personagem.nome_personagem || personagem.id}</div>
-      <div class="header-stats">
+      ${typeof (personagem.nivel ?? personagem['nível']) !== 'undefined' ? `<span class="header-level">Nível ${personagem.nivel ?? personagem['nível']}</span>` : ''}
+    </div>
+    <div class="card-body">
+      <div class="header-stats row">
         ${typeof personagem.pontos_vida !== 'undefined' ? `<div class="stat pv"><span class="icon heart"></span><span class="label">PV</span><span class="value">${personagem.pontos_vida}</span></div>` : ''}
         ${typeof personagem.classe_armadura !== 'undefined' ? `<div class="stat ca"><span class="icon shield"></span><span class="label">CA</span><span class="value">${personagem.classe_armadura}</span></div>` : ''}
         ${typeof personagem.bonus_proficiencia !== 'undefined' ? `<div class="stat prof"><span class="icon star"></span><span class="label">Prof</span><span class="value">${fmtBonus(personagem.bonus_proficiencia)}</span></div>` : ''}
       </div>
-    </div>
-    <div class="card-body">
       <div class="meta">
         ${personagem.raca ? `<span class="chip">${personagem.raca}</span>` : ''}
         ${personagem.classe ? `<span class="chip">${personagem.classe}</span>` : ''}
         ${idiomas ? `<span class="chip">Idiomas: ${idiomas}</span>` : ''}
-        ${typeof (personagem.nivel ?? personagem['nível']) !== 'undefined' ? `<span class="level">Nível ${personagem.nivel ?? personagem['nível']}</span>` : ''}
       </div>
 
       
