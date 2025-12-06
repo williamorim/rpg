@@ -24,6 +24,7 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:"Inter",system-
 .meta{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 0;align-items:center}
 .meta .chip{display:inline-flex;align-items:center;gap:6px;background:var(--chip);border:1px solid var(--border);padding:4px 8px;border-radius:999px;color:var(--muted);font-size:12px}
 .meta .level{display:none}
+.meta .initiative{margin-left:auto;color:#fb8c00;font-size:14px;font-weight:800}
 .chip .icon{width:14px;height:14px;display:inline-block}
 .chip.pv{color:#ff6b6b;border-color:#ff6b6b33;background:linear-gradient(0deg,rgba(255,107,107,0.12),rgba(255,107,107,0.12)),var(--chip)}
 .chip.ca{color:#4da3ff;border-color:#4da3ff33;background:linear-gradient(0deg,rgba(77,163,255,0.12),rgba(77,163,255,0.12)),var(--chip)}

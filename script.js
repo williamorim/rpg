@@ -239,6 +239,9 @@ function renderCard(personagem){
   const abilitiesHtml = abilOrder.map(k => habilidades[k] ? renderAbility(k, habilidades[k]) : '').join('');
   const img = imgPathFor(personagem.id);
   const idiomas = Array.isArray(personagem.idiomas) ? personagem.idiomas.join(', ') : '';
+  const destrezaMod = (personagem.habilidades && personagem.habilidades.destreza && (personagem.habilidades.destreza.modificador || 0)) || 0;
+  const bonusIni = typeof personagem.bonus_iniciativa !== 'undefined' ? (personagem.bonus_iniciativa || 0) : 0;
+  const iniciativa = destrezaMod + bonusIni;
 
   return `<article class="card" id="card-${personagem.id}">
     <div class="card-header">
@@ -256,6 +259,7 @@ function renderCard(personagem){
         ${personagem.raca ? `<span class="chip">${personagem.raca}</span>` : ''}
         ${personagem.classe ? `<span class="chip">${personagem.classe}</span>` : ''}
         ${idiomas ? `<span class="chip">Idiomas: ${idiomas}</span>` : ''}
+        <span class="initiative">Iniciativa: ${fmtBonus(iniciativa)}</span>
       </div>
 
       

@@ -8,6 +8,7 @@
   - peso: 42
   - tamanho: "médio"
   - deslocamento: 9
+  - bonus_iniciativa: 0
   - idiomas:
       - "Comum"
       - "Auran"
@@ -170,6 +171,7 @@
   - peso: 76
   - tamanho: "médio"
   - deslocamento: 9
+  - bonus_iniciativa: 0
   - idiomas:
       - "Comum"
   - pontos_vida: 9
