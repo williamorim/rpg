@@ -53,12 +53,24 @@ function groupSkillsByAbility(pericias){
 }
 
 function renderAbility(abilKey, abil){
-  const classes = ["ability"]; if(abil.proficiencia) classes.push("proficiente");
+  const classes = ["ability"]; // não destacar proficiência nas habilidades
   return `<div class="${classes.join(" ")}">
     <div class="ability-name">${abil.nome}</div>
     <div class="ability-value">${abil.valor}</div>
     <div class="ability-mod">(${fmtBonus(abil.modificador)})</div>
   </div>`;
+}
+
+function renderSavingThrows(personagem){
+  const habilidades = personagem.habilidades || {};
+  const order = ['forca','destreza','constituicao','inteligencia','sabedoria','carisma'];
+  const items = order.map(key => {
+    const abil = habilidades[key];
+    if(!abil) return '';
+    const cls = abil.proficiencia_resistencia ? 'saving-throw proficiente' : 'saving-throw';
+    return `<div class="${cls}">${abil.nome}: ${fmtBonus(abil.modificador || 0)}</div>`;
+  }).join('');
+  return `<div class="saving-throws">${items}</div>`;
 }
 
 function calcSkillBonus(pericia, habilidades, bonusProf){
@@ -100,8 +112,7 @@ function ensureArrayFromObjectValues(obj){
 
 function buildArmasContent(personagem){
   const armas = ensureArrayFromObjectValues(personagem.armas);
-  if(!armas.length) return '<p>Nenhuma arma cadastrada.</p>';
-  const items = armas.map(a => {
+  const items = armas.length ? armas.map(a => {
     const propsArr = Array.isArray(a.propriedades) ? a.propriedades : [];
     const props = propsArr.length ? propsArr.map(x=>`<span class="tag">${x}</span>`).join(' ') : '';
     // Prefer explicit field if present; else extract from propriedades like "Arremesso (alcance 20/60)"
@@ -123,8 +134,27 @@ function buildArmasContent(personagem){
       ${props ? `<p>${props}</p>` : ''}
       ${typeof a.proficiencia === 'boolean' ? '' : ''}
     </div>`;
-  }).join('');
-  return `<div class="modal-armas">${items}</div>`;
+  }).join('') : '<p>Nenhuma arma cadastrada.</p>';
+  // Helper to stringify proficiency lists that may be arrays of strings or objects
+  const listToText = (list) => {
+    const arr = ensureArrayFromObjectValues(list);
+    if(!arr || !arr.length) return 'Nenhuma';
+    return arr.map(x => typeof x === 'string' ? x : (x && (x.nome || x.name || String(x))))
+              .join(', ');
+  };
+  // Proficiências: ler de personagem.proficiencias (armas, armaduras, ferramentas)
+  const profs = personagem.proficiencias || {};
+  const profArmas = listToText(profs.armas);
+  const profArmaduras = listToText(profs.armaduras);
+  const profFerramentas = listToText(profs.ferramentas);
+  const profSection = `
+    <div class="item">
+      <h5>Proficiências</h5>
+      <p><strong>Armas:</strong> ${profArmas}</p>
+      <p><strong>Armaduras:</strong> ${profArmaduras}</p>
+      <p><strong>Ferramentas:</strong> ${profFerramentas}</p>
+    </div>`;
+  return `<div class="modal-armas">${items}${profSection}</div>`;
 }
 
 function buildMagiasContent(personagem){
@@ -233,6 +263,11 @@ function renderCard(personagem){
       <div class="section">
         <h3>Habilidades</h3>
         <div class="abilities">${abilitiesHtml}</div>
+      </div>
+
+      <div class="section">
+        <h3>Testes de Resistência</h3>
+        ${renderSavingThrows(personagem)}
       </div>
 
       <div class="section">
