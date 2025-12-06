@@ -147,13 +147,13 @@
     - armaduras: []
     - ferramentas: ["Quaisquer ferramentas que você já viu sendo utilizada"]
   - armas:
-    - adaga:
-      - nome: "Adaga"
-      - dano: "1d4"
-      - tipo_dano: "Perfurante"
-      - propriedades: ["Acuidade", "Leve"]
-      - alcance_arremesso: "6/18"
-      - proficiencia: true
+    # - adaga:
+    #   - nome: "Adaga"
+    #   - dano: "1d4"
+    #   - tipo_dano: "Perfurante"
+    #   - propriedades: ["Acuidade", "Leve"]
+    #   - alcance_arremesso: "6/18"
+    #   - proficiencia: true
   - equipamentos:
       - equipamento_1:
         - nome: "Túnica suja e rasgada"
@@ -305,11 +305,11 @@
       - armaduras: []
       - ferramentas: ["Martelo", "Limpeza"]
   - armas:
-    - lanca:
-      - nome: "Lança"
-      - dano: "1d6"
-      - tipo_dano: "Perfurante"
-      - propriedades: ["Versátil"]
-      - alcance_arremesso: "6/18"
-      - proficiencia: true
+    # - lanca:
+    #   - nome: "Lança"
+    #   - dano: "1d6"
+    #   - tipo_dano: "Perfurante"
+    #   - propriedades: ["Versátil"]
+    #   - alcance_arremesso: "6/18"
+    #   - proficiencia: true
 
