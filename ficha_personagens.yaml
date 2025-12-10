@@ -13,6 +13,7 @@
       - "Comum"
       - "Auran"
   - pontos_vida: 7
+  - dado_vida: "1d6"
   - classe_armadura: 13
   - bonus_proficiencia: 2
   - habilidades:
@@ -175,6 +176,7 @@
   - idiomas:
       - "Comum"
   - pontos_vida: 9
+  - dado_vida: "1d8"
   - classe_armadura: 16
   - bonus_proficiencia: 2
   - habilidades:
@@ -313,3 +315,177 @@
     #   - alcance_arremesso: "6/18"
     #   - proficiencia: true
 
+
+# ANNIKA
+
+- annika:
+  - nome_personagem: "Annika"
+  - raca: "Meia-Elfa"
+  - classe: "Barda"
+  - nivel: 1
+  - idade: 30
+  - altura: "1,62m"
+  - peso: 60
+  - tamanho: "médio"
+  - deslocamento: 9
+  - bonus_iniciativa: 0
+  - idiomas:
+      - "Comum"
+      - "Élfico"
+  - pontos_vida: 9
+  - dado_vida: "1d8"
+  - classe_armadura: 16
+  - bonus_proficiencia: 2
+  - habilidades:
+      - forca:
+        - nome: "Força"
+        - valor: 8
+        - modificador: -1
+        - proficiencia_resistencia : false
+      - destreza:
+        - nome: "Destreza"
+        - valor: 15
+        - modificador: 2
+        - proficiencia_resistencia : true
+      - constituicao:
+        - nome: "Constituição"
+        - valor: 12
+        - modificador: 1
+        - proficiencia_resistencia : false
+      - inteligencia:
+        - nome: "Inteligência"
+        - valor: 14
+        - modificador: 1
+        - proficiencia_resistencia : false
+      - sabedoria:
+        - nome: "Sabedoria"
+        - valor: 10
+        - modificador: 0
+        - proficiencia_resistencia : false
+      - carisma:
+        - nome: "Carisma"
+        - valor: 17
+        - modificador: 3
+        - proficiencia_resistencia : true
+  - pericias:
+    - atletismo:
+      - nome: "Atletismo"
+      - proficiencia: false
+      - habilidade_relacionada: "forca"
+    - acrobacia:
+      - nome: "Acrobacia"
+      - proficiencia: false
+      - habilidade_relacionada: "destreza"
+    - furtividade:
+      - nome: "Furtividade"
+      - proficiencia: false
+      - habilidade_relacionada: "destreza"
+    - prestidigitacao:
+      - nome: "Prestidigitação"
+      - proficiencia: true
+      - habilidade_relacionada: "destreza"
+    - arcanismo:
+      - nome: "Arcanismo"
+      - proficiencia: false
+      - habilidade_relacionada: "inteligencia"
+    - historia:
+      - nome: "História"
+      - proficiencia: false
+      - habilidade_relacionada: "inteligencia"
+    - investigacao:
+      - nome: "Investigação"
+      - proficiencia: false
+      - habilidade_relacionada: "inteligencia"
+    - natureza:
+      - nome: "Natureza"
+      - proficiencia: false
+      - habilidade_relacionada: "inteligencia"
+    - religiao:
+      - nome: "Religião"
+      - proficiencia: false
+      - habilidade_relacionada: "inteligencia"
+    - adestrar animais:
+      - nome: "Adestrar Animais"
+      - proficiencia: false
+      - habilidade_relacionada: "sabedoria"
+    - intuicao:
+      - nome: "Intuição"
+      - proficiencia: false
+      - habilidade_relacionada: "sabedoria"
+    - medicina:
+      - nome: "Medicina"
+      - proficiencia: false
+      - habilidade_relacionada: "sabedoria"
+    - percepcao:
+      - nome: "Percepção"
+      - proficiencia: true
+      - habilidade_relacionada: "sabedoria"
+    - sobrevivencia:
+      - nome: "Sobrevivência"
+      - proficiencia: true
+      - habilidade_relacionada: "sabedoria"
+    - atuacao:
+      - nome: "Atuação"
+      - proficiencia: true
+      - habilidade_relacionada: "carisma"
+    - enganacao:
+      - nome: "Enganação"
+      - proficiencia: true
+      - habilidade_relacionada: "carisma"
+    - intimidacao:
+      - nome: "Intimidação"
+      - proficiencia: false
+      - habilidade_relacionada: "carisma"
+    - persuasao:
+      - nome: "Persuasão"
+      - proficiencia: false
+      - habilidade_relacionada: "carisma"
+  - tracos:
+      - visao_escuro:
+        - nome: "Visão no Escuro"
+        - descricao: "Você pode <b>ver na penumbra a até 18 metros de você como se fosse luz plena</b>, e na escuridão como se fosse penumbra. Você discerne cores nessa escuridão apenas como tons de cinza"
+      - ancestral_feerico:
+        - nome: "Ancestral Feérico"
+        - descricao: "Você tem <b>vantagem em testes de resistência contra encantamento</b>, e magias não podem colocá-lo para dormir."
+      - inspiracao_bardo:
+        - nome: "Inspiração de Bardo"
+        - descricao: "Você pode inspirar outros com sua música ou palavras animadoras. <b>Escolha uma criatura a até 18 metros que possa ouvi-lo. Ela ganha um dado de inspiração de bardo</b>. Uma vez dentro dos próximos 10 minutos, a criatura pode rolar o dado e adicionar o número rolado a um teste de habilidade, teste de ataque ou teste de resistência. A criatura pode esperar até depois de rolar o dado para decidir usá-lo, mas deve decidir antes do Mestre dizer se o teste foi bem-sucedido ou não. Uma vez usado, o dado de inspiração é perdido. Você pode usar essa característica um número de vezes igual ao seu modificador de Carisma (mínimo de uma vez). Você recupera todos os usos gastos quando termina um descanso longo."
+  - proficiencias: 
+      - armas: ["Armas simples", "Bestas de mão", "Espadas longas", "Espadas curtas", "Rapieiras"]
+      - armaduras: ["Armaduras leves"]
+      - ferramentas: ["Martelo", "Limpeza"]
+  - espacos_magia:
+      - nivel_1: 2
+      - nivel_2: 0
+      - nivel_3: 0
+      - nivel_4: 0
+      - nivel_5: 0
+      - nivel_6: 0
+      - nivel_7: 0
+      - nivel_8: 0
+      - nivel_9: 0
+  - magias:
+    - curar_ferimentos:
+      - nome: "Curar Ferimentos"
+      - nivel: 1
+      - tipo: "Evocação"
+      - descricao: "Uma criatura que você tocar recupera um número de pontos de vida igual a <b>1d8 + seu modificador de Carisma</b>. Esta magia não tem efeito em mortos-vivos ou constructos. <br> Em Níveis Superiores. Se você conjurar essa magia usando um espaço de magia de 2° nível ou superior, a cura aumenta em 1d8 para cada nível do espaço acima do 1°."
+      - alcance: "Toque"
+      - componentes: ["V", "S"]
+      - duracao: "Instantânea"
+  - truques:
+    - amizade:
+      - nome: "Amizade"
+      - tipo: "Encantamento"
+      - descricao: "Pela duração, você terá vantagem em todos os testes de Carisma direcionados a uma criatura, à sua escolha, que não seja hostil a você. Quando a magia acabar, a criatura perceberá que você usou maia para influenciar o humor dela, e ficará hostil a você."
+      - alcance: 9
+      - duracao: "1 minuto"
+      - componentes: ["S", "M"]
+  - armas:
+    # - lanca:
+    #   - nome: "Lança"
+    #   - dano: "1d6"
+    #   - tipo_dano: "Perfurante"
+    #   - propriedades: ["Versátil"]
+    #   - alcance_arremesso: "6/18"
+    #   - proficiencia: true
