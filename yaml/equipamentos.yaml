@@ -3,9 +3,14 @@
   - CA: 11 + modificador de Destreza
   - Tipo: "Leve"
   - Efeitos:
-    - "Desvantagem em testes de Furtividade"
+    - Desvantagem em testes de Furtividade
 
 - tunica_velha:
   - nome: "Túnica suja e rasgada"
   - Efeitos:
-    - "Desvantagem em testes de Carisma"
+    - Desvantagem em testes de Carisma
+
+- flauta_da_annika:
+  - nome: "Flauta da Annika"
+  - Efeitos:
+    - Você pode tocar a sua flauta para prender a atenção de criaturas próximas por até 1 minuto. A cada 15 segundos, a criatura deve fazer um teste de Inteligência (CD 12) para resistir ao efeito.

@@ -132,7 +132,7 @@
     - armaduras: []
     - ferramentas: ["Quaisquer ferramentas que você já viu sendo utilizada"]
   - armas:
-    - adaga
+    # - adaga
   - equipamentos:
       - tunica_velha
 
@@ -271,7 +271,7 @@
       - armaduras: []
       - ferramentas: ["Martelo", "Limpeza"]
   - armas:
-    - lanca
+    # - lanca
 
 
 # ANNIKA
@@ -405,7 +405,7 @@
   - proficiencias: 
       - armas: ["Armas simples", "Bestas de mão", "Espadas longas", "Espadas curtas", "Rapieiras"]
       - armaduras: ["Armaduras leves"]
-      - ferramentas: ["Martelo", "Limpeza"]
+      - ferramentas: ["Flauta", "Alaúde", "Lira"]
   - espacos_magia:
       - nivel_1: 2
       - nivel_2: 0
@@ -421,6 +421,7 @@
   - truques:
     - amizade
   - armas:
-    - rapieira
+    # - rapieira
   - equipamentos:
-    - armadura_acolchoada
+    # - armadura_acolchoada
+    - flauta_da_annika
