@@ -1,0 +1,22 @@
+- curar_ferimentos:
+  - nome: "Curar Ferimentos"
+  - nivel: 1
+  - tipo: "Evocação"
+  - descricao: "Uma criatura que você tocar recupera um número de pontos de vida igual a <b>1d8 + seu modificador de Carisma</b>. Esta magia não tem efeito em mortos-vivos ou constructos. <br> Em Níveis Superiores. Se você conjurar essa magia usando um espaço de magia de 2° nível ou superior, a cura aumenta em 1d8 para cada nível do espaço acima do 1°."
+  - alcance: "Toque"
+  - componentes: ["V", "S"]
+  - duracao: "Instantânea"
+
+- misseis_magicos:
+  - nome: "Mísseis Mágicos"
+  - descricao: "Você cria três dardos brilhantes de energia mística. Cada dardo atinge uma criatura, à sua escolha, que você possa ver, dentro do alcance. Um dardo causa 1d4 + 1 de dano de energia ao alvo. Todos os dardos atingem simultaneamente e você pode direciona-los para atingir uma criatura ou várias."
+  - dano: "1d4 + 1 de dano de energia"
+  - alcance: 36
+  - componentes: ["V", "S"]
+
+- silencio:
+  - nome: "Silêncio"
+  - descricao: "Pela duração, nenhum som pode ser criado dentro ou atravessar uma esfera de <b>6 metros de raio</b> centrada num ponto, à sua escolha, dentro do alcance. Qualquer criatura ou objeto totalmente dentro da esfera é imune a dano trovejante e as criaturas estarão surdas enquanto estiverem completamente dentro dela. Conjurar magias que incluam a componente verbal é impossível ai."
+  - alcance: 36
+  - componentes: ["V", "S"]
+  - duracao: "Concentração, até 10 minutos"

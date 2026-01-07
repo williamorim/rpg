@@ -1,0 +1,11 @@
+- armadura_acolchoada:
+  - nome: "Armadura Acolchoada"
+  - CA: 11 + modificador de Destreza
+  - Tipo: "Leve"
+  - Efeitos:
+    - "Desvantagem em testes de Furtividade"
+
+- tunica_velha:
+  - nome: "Túnica suja e rasgada"
+  - Efeitos:
+    - "Desvantagem em testes de Carisma"

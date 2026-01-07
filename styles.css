@@ -3,8 +3,10 @@
 html,body{height:100%}
 body{margin:0;background:var(--bg);color:var(--text);font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Noto Sans",sans-serif;line-height:1.4}
 
-.site-header{padding:16px 20px;border-bottom:1px solid var(--border);background:var(--panel)}
+.site-header{padding:16px 20px;border-bottom:1px solid var(--border);background:var(--panel);display:flex;align-items:center;justify-content:space-between}
 .site-header h1{margin:0;font-size:20px}
+.site-actions .nav-link{color:var(--muted);text-decoration:none;font-weight:600}
+.site-actions .nav-link:hover{color:var(--text)}
 
 .cards-grid{display:grid;gap:16px;padding:16px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
 
@@ -46,6 +48,8 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:"Inter",system-
 .stat .label{color:var(--muted);font-size:12px}
 .stat .value{font-size:22px;font-weight:800}
 .stat.pv{color:#ff6b6b;border-color:#ff6b6b33;background:linear-gradient(0deg,rgba(255,107,107,0.12),rgba(255,107,107,0.12)),var(--chip)}
+.stat.pv{position:relative}
+.stat.pv .hit-die{position:absolute;right:10px;bottom:6px;font-size:12px;color:var(--muted);font-weight:600}
 .stat.ca{color:#4da3ff;border-color:#4da3ff33;background:linear-gradient(0deg,rgba(77,163,255,0.12),rgba(77,163,255,0.12)),var(--chip)}
 .stat.prof{color:#fdd835;border-color:#fdd83533;background:linear-gradient(0deg,rgba(253,216,53,0.12),rgba(253,216,53,0.12)),var(--chip)}
 .stat.pv .icon{background:#ff6b6b}
@@ -87,15 +91,23 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:"Inter",system-
 #modal-title{margin:0 0 8px 0}
 #modal-content{display:grid;gap:8px}
 
+.modal-image{max-width:100%;height:auto;display:block;border-radius:8px;border:1px solid var(--border)}
+
 .item{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px}
 .item h5{margin:0 0 6px 0}
 .item p{margin:2px 0}
 .item .tag{display:inline-block;background:var(--chip);border:1px solid var(--border);padding:2px 6px;border-radius:999px;color:var(--muted);font-size:12px;margin-right:6px}
 .item p b{color:#9575cd}
 
+/* Proficiências: texto menor */
+.item.proficiencias p{font-size:12px}
+
 /* Armas: título maior */
 .modal-armas .item h5{font-size:18px}
 .modal-armas .item h5.proficiente{color:var(--accent-strong)}
+/* Armas: texto um pouco menor e espaçamento antes das tags */
+.modal-armas .item p{font-size:13px}
+.modal-armas .item p.weapon-tags{margin-top:8px}
 
 /* Magias: título maior e espaçamento confortável */
 .modal-magias .item h5{font-size:18px}
@@ -106,6 +118,14 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:"Inter",system-
 .tag.comp-V{color:#fb8c00;border-color:#fb8c0033;background:linear-gradient(0deg,rgba(251,140,0,0.12),rgba(251,140,0,0.12)),var(--chip)}
 .tag.comp-S{color:#f06292;border-color:#f0629233;background:linear-gradient(0deg,rgba(240,98,146,0.12),rgba(240,98,146,0.12)),var(--chip)}
 .tag.comp-M{color:#9575cd;border-color:#9575cd33;background:linear-gradient(0deg,rgba(149,117,205,0.12),rgba(149,117,205,0.12)),var(--chip)}
+
+/* Equipamentos: título maior, texto confortável e efeitos em lista */
+.modal-equipamentos .item h5{font-size:18px}
+.modal-equipamentos .item p{margin:6px 0}
+.modal-equipamentos .item p.effects-label{margin-top:8px;margin-bottom:4px}
+.modal-equipamentos .item ul.equipment-effects{margin:8px 0 0 0;padding-left:18px}
+.modal-equipamentos .item ul.equipment-effects li{font-size:13px}
+.modal-equipamentos .item p.equipment-tags{margin-top:8px}
 
 @media (max-width: 480px){
   .card-header img{height:160px}

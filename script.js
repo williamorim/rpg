@@ -131,30 +131,11 @@ function buildArmasContent(personagem){
       <h5 class="${h5Class}">${a.nome || 'Arma'}</h5>
       ${a.dano ? `<p><strong>Dano:</strong> ${a.dano}${a.tipo_dano ? ` (${a.tipo_dano})` : ''}</p>` : ''}
       ${alcanceTexto ? `<p><strong>Alcance de arremesso:</strong> ${alcanceTexto}</p>` : ''}
-      ${props ? `<p>${props}</p>` : ''}
+      ${props ? `<p class="weapon-tags">${props}</p>` : ''}
       ${typeof a.proficiencia === 'boolean' ? '' : ''}
     </div>`;
   }).join('') : '<p>Nenhuma arma cadastrada.</p>';
-  // Helper to stringify proficiency lists that may be arrays of strings or objects
-  const listToText = (list) => {
-    const arr = ensureArrayFromObjectValues(list);
-    if(!arr || !arr.length) return 'Nenhuma';
-    return arr.map(x => typeof x === 'string' ? x : (x && (x.nome || x.name || String(x))))
-              .join(', ');
-  };
-  // Proficiências: ler de personagem.proficiencias (armas, armaduras, ferramentas)
-  const profs = personagem.proficiencias || {};
-  const profArmas = listToText(profs.armas);
-  const profArmaduras = listToText(profs.armaduras);
-  const profFerramentas = listToText(profs.ferramentas);
-  const profSection = `
-    <div class="item">
-      <h5>Proficiências</h5>
-      <p><strong>Armas:</strong> ${profArmas}</p>
-      <p><strong>Armaduras:</strong> ${profArmaduras}</p>
-      <p><strong>Ferramentas:</strong> ${profFerramentas}</p>
-    </div>`;
-  return `<div class="modal-armas">${items}${profSection}</div>`;
+  return `<div class="modal-armas">${items}</div>`;
 }
 
 function buildMagiasContent(personagem){
@@ -162,7 +143,27 @@ function buildMagiasContent(personagem){
   if(!magias) return '<p>Nenhuma magia cadastrada.</p>';
   if(Array.isArray(magias)){
     if(!magias.length) return '<p>Nenhuma magia cadastrada.</p>';
-    const items = magias.map(nome => `<div class="item"><h5>${nome}</h5></div>`).join('');
+    const allStrings = magias.every(m => typeof m === 'string');
+    if(allStrings){
+      const items = magias.map(nome => `<div class="item"><h5>${nome}</h5></div>`).join('');
+      return `<div class="modal-magias">${items}</div>`;
+    }
+    // Array de objetos com detalhes
+    const items = magias.map(m => {
+      const compsColored = Array.isArray(m.componentes) ? m.componentes.map(c=>{
+        const cls = `comp-${String(c).toUpperCase()}`;
+        return `<span class="tag ${cls}">${c}</span>`;
+      }).join(' ') : '';
+      const alcanceText = (typeof m.alcance === 'number') ? `${m.alcance}m` : (typeof m.alcance !== 'undefined' ? String(m.alcance) : '');
+      return `<div class="item">
+        <h5>${m.nome || 'Magia'}</h5>
+        ${m.descricao ? `<p>${m.descricao}</p>` : ''}
+        ${m.dano ? `<p class="prop"><strong>Dano:</strong> ${m.dano}</p>` : ''}
+        ${alcanceText ? `<p class="prop"><strong>Alcance:</strong> ${alcanceText}</p>` : ''}
+        ${m.duracao ? `<p class="prop"><strong>Duração:</strong> ${m.duracao}</p>` : ''}
+        ${compsColored ? `<p>${compsColored}</p>` : ''}
+      </div>`;
+    }).join('');
     return `<div class="modal-magias">${items}</div>`;
   }
   const list = ensureArrayFromObjectValues(magias);
@@ -173,11 +174,12 @@ function buildMagiasContent(personagem){
       const cls = `comp-${String(c).toUpperCase()}`;
       return `<span class="tag ${cls}">${c}</span>`;
     }).join(' ') : '';
+    const alcanceText = (typeof m.alcance === 'number') ? `${m.alcance}m` : (typeof m.alcance !== 'undefined' ? String(m.alcance) : '');
     return `<div class="item">
       <h5>${m.nome || 'Magia'}</h5>
       ${m.descricao ? `<p>${m.descricao}</p>` : ''}
       ${m.dano ? `<p class="prop"><strong>Dano:</strong> ${m.dano}</p>` : ''}
-      ${typeof m.alcance !== 'undefined' ? `<p class="prop"><strong>Alcance:</strong> ${m.alcance} m</p>` : ''}
+      ${alcanceText ? `<p class="prop"><strong>Alcance:</strong> ${alcanceText}</p>` : ''}
       ${m.duracao ? `<p class="prop"><strong>Duração:</strong> ${m.duracao}</p>` : ''}
       ${compsColored ? `<p>${compsColored}</p>` : ''}
     </div>`;
@@ -188,12 +190,57 @@ function buildMagiasContent(personagem){
 function buildEquipamentosContent(personagem){
   const equipamentos = ensureArrayFromObjectValues(personagem.equipamentos);
   if(!equipamentos.length) return '<p>Nenhum equipamento cadastrado.</p>';
-  return equipamentos.map(e => {
+  const items = equipamentos.map(e => {
+    const title = e.nome || 'Equipamento';
+    const parts = [];
+    for(const k of Object.keys(e)){
+      if(k === 'nome') continue;
+      const v = e[k];
+      const kl = k.toLowerCase();
+      if(kl === 'propriedades'){
+        const arr = Array.isArray(v) ? v : [];
+        const tags = arr.length ? arr.map(x=>`<span class="tag">${x}</span>`).join(' ') : '';
+        if(tags) parts.push(`<p class="equipment-tags">${tags}</p>`);
+        continue;
+      }
+      if(kl === 'efeitos'){
+        const arr = Array.isArray(v) ? v : [];
+        const list = arr.length ? `<p class="effects-label"><strong>Efeitos:</strong></p><ul class="equipment-effects">${arr.map(it => {
+          const txt = typeof it === 'string' ? it : (it && (it.nome || it.name || Object.values(it).join(', ')));
+          return `<li>${txt || ''}</li>`;
+        }).join('')}</ul>` : '';
+        if(list) parts.push(list);
+        continue;
+      }
+      if(kl === 'descricao' || k === 'descrição'){
+        if(v) parts.push(`<p>${v}</p>`);
+        continue;
+      }
+      if(kl === 'bonus' || k === 'bônus'){
+        if(v) parts.push(`<p><strong>Bônus:</strong> ${v}</p>`);
+        continue;
+      }
+      if(Array.isArray(v)){
+        if(!v.length) continue;
+        const content = v.map(it => typeof it === 'string' ? it : (it && (it.nome || it.name || String(it)))).join(', ');
+        parts.push(`<p><strong>${k}:</strong> ${content}</p>`);
+        continue;
+      }
+      if(v && typeof v === 'object'){
+        const content = Object.entries(v).map(([kk,vv]) => `${kk}: ${vv}`).join('; ');
+        parts.push(`<p><strong>${k}:</strong> ${content}</p>`);
+        continue;
+      }
+      if(typeof v !== 'undefined' && v !== ''){
+        parts.push(`<p><strong>${k}:</strong> ${v}</p>`);
+      }
+    }
     return `<div class="item">
-      <h5>${e.nome || 'Equipamento'}</h5>
-      ${e.bonus ? `<p><strong>Bônus:</strong> ${e.bonus}</p>` : ''}
+      <h5>${title}</h5>
+      ${parts.join('')}
     </div>`;
   }).join('');
+  return `<div class="modal-equipamentos">${items}</div>`;
 }
 
 function buildTracosContent(personagem){
@@ -205,6 +252,71 @@ function buildTracosContent(personagem){
       ${t.descricao ? `<p>${t.descricao}</p>` : ''}
     </div>`;
   }).join('');
+}
+
+function formatProficienciasList(list){
+  const arr = ensureArrayFromObjectValues(list);
+  if(!arr || !arr.length) return 'Nenhuma';
+  return arr.map(x => typeof x === 'string' ? x : (x && (x.nome || x.name || String(x)))).join(', ');
+}
+
+function buildProficienciasContent(personagem){
+  const profs = personagem.proficiencias || {};
+  const profArmas = formatProficienciasList(profs.armas);
+  const profArmaduras = formatProficienciasList(profs.armaduras);
+  const profFerramentas = formatProficienciasList(profs.ferramentas);
+  return `<div class="item proficiencias">
+    <p><strong>Armas:</strong> ${profArmas}</p>
+    <p><strong>Armaduras:</strong> ${profArmaduras}</p>
+    <p><strong>Ferramentas:</strong> ${profFerramentas}</p>
+  </div>`;
+}
+
+function buildTruquesContent(personagem){
+  const truques = personagem.truques;
+  if(!truques) return '<p>Nenhum truque cadastrado.</p>';
+  if(Array.isArray(truques)){
+    if(!truques.length) return '<p>Nenhum truque cadastrado.</p>';
+    const allStrings = truques.every(t => typeof t === 'string');
+    if(allStrings){
+      const items = truques.map(nome => `<div class="item"><h5>${nome}</h5></div>`).join('');
+      return `<div class="modal-truques">${items}</div>`;
+    }
+    const items = truques.map(t => {
+      const compsColored = Array.isArray(t.componentes) ? t.componentes.map(c=>{
+        const cls = `comp-${String(c).toUpperCase()}`;
+        return `<span class="tag ${cls}">${c}</span>`;
+      }).join(' ') : '';
+      const alcanceText = (typeof t.alcance === 'number') ? `${t.alcance}m` : (typeof t.alcance !== 'undefined' ? String(t.alcance) : '');
+      return `<div class="item">
+        <h5>${t.nome || 'Truque'}</h5>
+        ${t.descricao ? `<p>${t.descricao}</p>` : ''}
+        ${t.dano ? `<p class="prop"><strong>Dano:</strong> ${t.dano}</p>` : ''}
+        ${alcanceText ? `<p class="prop"><strong>Alcance:</strong> ${alcanceText}</p>` : ''}
+        ${t.duracao ? `<p class="prop"><strong>Duração:</strong> ${t.duracao}</p>` : ''}
+        ${compsColored ? `<p>${compsColored}</p>` : ''}
+      </div>`;
+    }).join('');
+    return `<div class="modal-truques">${items}</div>`;
+  }
+  const list = ensureArrayFromObjectValues(truques);
+  if(!list.length) return '<p>Nenhum truque cadastrado.</p>';
+  const items = list.map(t => {
+    const compsColored = Array.isArray(t.componentes) ? t.componentes.map(c=>{
+      const cls = `comp-${String(c).toUpperCase()}`;
+      return `<span class="tag ${cls}">${c}</span>`;
+    }).join(' ') : '';
+    const alcanceText = (typeof t.alcance === 'number') ? `${t.alcance}m` : (typeof t.alcance !== 'undefined' ? String(t.alcance) : '');
+    return `<div class="item">
+      <h5>${t.nome || 'Truque'}</h5>
+      ${t.descricao ? `<p>${t.descricao}</p>` : ''}
+      ${t.dano ? `<p class="prop"><strong>Dano:</strong> ${t.dano}</p>` : ''}
+      ${alcanceText ? `<p class="prop"><strong>Alcance:</strong> ${alcanceText}</p>` : ''}
+      ${t.duracao ? `<p class="prop"><strong>Duração:</strong> ${t.duracao}</p>` : ''}
+      ${compsColored ? `<p>${compsColored}</p>` : ''}
+    </div>`;
+  }).join('');
+  return `<div class="modal-truques">${items}</div>`;
 }
 
 function openModal(title, html){
@@ -251,7 +363,7 @@ function renderCard(personagem){
     </div>
     <div class="card-body">
       <div class="header-stats row">
-        ${typeof personagem.pontos_vida !== 'undefined' ? `<div class="stat pv"><span class="icon heart"></span><span class="label">PV</span><span class="value">${personagem.pontos_vida}</span></div>` : ''}
+        ${typeof personagem.pontos_vida !== 'undefined' ? `<div class="stat pv"><span class="icon heart"></span><span class="label">PV</span><span class="value">${personagem.pontos_vida}</span>${personagem.dado_vida ? `<span class="hit-die" aria-label="Dado de vida" title="Dado de vida">${personagem.dado_vida}</span>` : ''}</div>` : ''}
         ${typeof personagem.classe_armadura !== 'undefined' ? `<div class="stat ca"><span class="icon shield"></span><span class="label">CA</span><span class="value">${personagem.classe_armadura}</span></div>` : ''}
         ${typeof personagem.bonus_proficiencia !== 'undefined' ? `<div class="stat prof"><span class="icon star"></span><span class="label">Prof</span><span class="value">${fmtBonus(personagem.bonus_proficiencia)}</span></div>` : ''}
       </div>
@@ -279,9 +391,15 @@ function renderCard(personagem){
         ${renderSkills(personagem)}
       </div>
 
+      <div class="section">
+        <h3>Proficiências</h3>
+        ${buildProficienciasContent(personagem)}
+      </div>
+
       <div class="actions">
         <button class="button" data-action="armas" data-char="${personagem.id}">Armas</button>
         <button class="button" data-action="magias" data-char="${personagem.id}">Magias</button>
+        <button class="button" data-action="truques" data-char="${personagem.id}">Truques</button>
         <button class="button" data-action="equipamentos" data-char="${personagem.id}">Equipamentos</button>
         <button class="button" data-action="tracos" data-char="${personagem.id}">Traços</button>
       </div>
@@ -292,11 +410,71 @@ function renderCard(personagem){
 async function main(){
   setupModalHandlers();
   const container = document.getElementById('cards');
+  // Header nav: open armas image in modal
+  const openArmas = document.getElementById('open-armas');
+  if(openArmas){
+    openArmas.addEventListener('click', (e)=>{
+      e.preventDefault();
+      const html = `<img src="img/armas.png" alt="Tabela de Armas" class="modal-image"/>`;
+      openModal('Armas', html);
+    });
+  }
+  // Header nav: open armaduras image in modal
+  const openArmaduras = document.getElementById('open-armaduras');
+  if(openArmaduras){
+    openArmaduras.addEventListener('click', (e)=>{
+      e.preventDefault();
+      const html = `<img src="img/armaduras.png" alt="Tabela de Armaduras" class="modal-image"/>`;
+      openModal('Armaduras', html);
+    });
+  }
   try{
+    // Carregar ficha base
     const res = await fetch('ficha_personagens.yaml');
     const text = await res.text();
     const yaml = jsyaml.load(text);
     const personagens = parseCharacters(yaml);
+
+    // Helper para carregar e normalizar YAMLs de catálogos
+    async function loadCatalog(path, topKey){
+      const r = await fetch(path);
+      const t = await r.text();
+      const data = normalize(jsyaml.load(t));
+      return topKey && data && data[topKey] ? data[topKey] : data;
+    }
+
+    // Carregar catálogos (armas, magias, traços, truques, equipamentos)
+    const [armasCatalog, magiasCatalog, tracosCatalog, truquesCatalog, equipamentosCatalog] = await Promise.all([
+      loadCatalog('yaml/armas.yaml'),
+      loadCatalog('yaml/magias.yaml'),
+      loadCatalog('yaml/tracos.yaml'),
+      loadCatalog('yaml/truques.yaml', 'truques'),
+      loadCatalog('yaml/equipamentos.yaml')
+    ]).catch(()=>[{}, {}, {}, {}, {}]);
+
+    // Resolver listas por nome para objetos do catálogo
+    function resolveSelection(selection, catalog){
+      if(!selection) return selection;
+      const toObj = (name)=>{
+        const item = catalog && catalog[name];
+        if(item && typeof item === 'object') return item;
+        return { nome: name };
+      };
+      if(Array.isArray(selection)){
+        return selection.map(it => typeof it === 'string' ? toObj(it) : it);
+      }
+      // Se já for objeto (compatibilidade com formato antigo), manter
+      return selection;
+    }
+
+    // Aplicar resolução aos personagens
+    for(const p of personagens){
+      p.armas = resolveSelection(p.armas, armasCatalog);
+      p.tracos = resolveSelection(p.tracos, tracosCatalog);
+      p.magias = resolveSelection(p.magias, magiasCatalog);
+      p.truques = resolveSelection(p.truques, truquesCatalog);
+      p.equipamentos = resolveSelection(p.equipamentos, equipamentosCatalog);
+    }
 
     container.innerHTML = personagens.map(renderCard).join('');
 
@@ -314,6 +492,8 @@ async function main(){
         openModal(`Magias — ${personagem.nome_personagem || personagem.id}`, buildMagiasContent(personagem));
       } else if(action === 'equipamentos'){
         openModal(`Equipamentos — ${personagem.nome_personagem || personagem.id}`, buildEquipamentosContent(personagem));
+      } else if(action === 'truques'){
+        openModal(`Truques — ${personagem.nome_personagem || personagem.id}`, buildTruquesContent(personagem));
       } else if(action === 'tracos'){
         openModal(`Traços — ${personagem.nome_personagem || personagem.id}`, buildTracosContent(personagem));
       }

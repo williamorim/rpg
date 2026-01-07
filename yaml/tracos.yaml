@@ -1,0 +1,42 @@
+- defesa_sem_armadura:
+  - nome: "Defesa sem Armadura"
+  - descricao: "Enquanto você não estiver vestindo armadura nem usando um escudo, sua Classe de Armadura é <b>10 + seu modificador de Destreza + seu modificador de Sabedoria</b>."
+
+- sem_forma:
+  - nome: "Sem Forma"
+  - descricao: "Você pode se espremer através de um espaço tão estreito quanto 2,5 cm de largura, desde que não esteja vestindo ou carregando nada. Você também tem <b>vantagem em testes de habilidade que fizer para iniciar ou escapar de uma agarração</b>."
+
+- visao_escuro:
+  - nome: "Visão no Escuro"
+  - descricao: "Você pode <b>ver na penumbra a até 18 metros de você como se fosse luz plena</b>, e na escuridão como se fosse penumbra. Você discerne cores nessa escuridão apenas como tons de cinza"
+
+- segurar_folego:
+  - nome: "Segurar o Fôlego"
+  - descricao: "Você pode segurar o fôlego por até 1 hora."
+- resiliencia_natural:
+  - nome: "Resiliência Natural"
+  - descricao: "Você tem <b>resistência a dano ácido e venenoso</b>. Você tem <b>vantagem</b> em testes de resistência contra ser envenenado. Você é imune a doenças."
+
+- moldar_se:
+  - nome: "Moldar-se"
+  - descricao: "Como uma ação, você pode remodelar seu corpo para dar a si mesmo uma cabeça, um ou dois braços, uma ou duas pernas, e mãos e pés improvisados, ou você pode reverter para uma massa sem membros. Enquanto você tem uma forma humanoide, você pode usar roupas e armaduras feitas para um Humanoide do seu tamanho. Como uma ação bônus, <b>você pode estender um pseudópode de até 15 cm de largura e 3 metros de comprimento</b> ou reabsorvê-lo em seu corpo. Como parte da mesma ação bônus, você pode usar este pseudópode para manipular um objeto, abrir ou fechar uma porta ou recipiente, ou pegar ou colocar um objeto minúsculo. O pseudópode não contém órgãos sensoriais e não pode atacar, ativar itens mágicos, ou erguer mais de 4,5 kg."
+
+- falsificacao:
+  - nome: "Perito em Falsificação"
+  - descricao: "Você pode duplicar escrita e artesanato de outras criaturas. <b>Você tem vantagem em todos os testes feitos para produzir falsificações ou duplicatas de objetos existentes.</b>"
+
+- treinamento_kenku:
+  - nome: "Treinamento Kenku"
+  - descricao: "Você tem proficiência em <b>Furtividade</b> e <b>Prestidigitação</b>."
+  
+- mimetismo:
+  - nome: "Mimetismo"
+  - descricao: "Você pode imitar sons que você ouviu, incluindo vozes. Uma criatura que ouve os sons que você faz pode dizer que eles são imitações com um teste bem sucedido de Sabedoria (Intuição), contra seu teste de Carisma (Enganação)"
+
+- ancestral_feerico:
+  - nome: "Ancestral Feérico"
+  - descricao: "Você tem <b>vantagem em testes de resistência contra encantamento</b>, e magias não podem colocá-lo para dormir."
+
+- inspiracao_bardo:
+  - nome: "Inspiração de Bardo"
+  - descricao: "Você pode inspirar outros com sua música ou palavras animadoras. <b>Escolha uma criatura a até 18 metros que possa ouvi-lo. Ela ganha um dado de inspiração de bardo</b>. Uma vez dentro dos próximos 10 minutos, a criatura pode rolar o dado e adicionar o número rolado a um teste de habilidade, teste de ataque ou teste de resistência. A criatura pode esperar até depois de rolar o dado para decidir usá-lo, mas deve decidir antes do Mestre dizer se o teste foi bem-sucedido ou não. Uma vez usado, o dado de inspiração é perdido. Você pode usar essa característica um número de vezes igual ao seu modificador de Carisma (mínimo de uma vez). Você recupera todos os usos gastos quando termina um descanso longo."
