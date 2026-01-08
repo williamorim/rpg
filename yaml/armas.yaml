@@ -4,14 +4,22 @@
   - tipo_dano: "Perfurante"
   - propriedades: ["Versátil (1d8)"]
   - alcance_arremesso: "6/18"
+
 - adaga:
   - nome: "Adaga"
   - dano: "1d4"
   - tipo_dano: "Perfurante"
   - propriedades: ["Finesse", "Leve"]
   - alcance_arremesso: "6/18"
+
 - rapieira:
   - nome: "Rapieira"
   - dano: "1d8"
   - tipo_dano: "Perfurante"
   - propriedades: ["Finesse"]
+
+- bordao:
+  - nome: "Bordão"
+  - dano: "1d6"
+  - tipo_dano: "Concussão"
+  - propriedades: ["Versátil (1d8)"]

@@ -13,6 +13,7 @@
 - segurar_folego:
   - nome: "Segurar o Fôlego"
   - descricao: "Você pode segurar o fôlego por até 1 hora."
+
 - resiliencia_natural:
   - nome: "Resiliência Natural"
   - descricao: "Você tem <b>resistência a dano ácido e venenoso</b>. Você tem <b>vantagem</b> em testes de resistência contra ser envenenado. Você é imune a doenças."
@@ -40,3 +41,15 @@
 - inspiracao_bardo:
   - nome: "Inspiração de Bardo"
   - descricao: "Você pode inspirar outros com sua música ou palavras animadoras. <b>Escolha uma criatura a até 18 metros que possa ouvi-lo. Ela ganha um dado de inspiração de bardo</b>. Uma vez dentro dos próximos 10 minutos, a criatura pode rolar o dado e adicionar o número rolado a um teste de habilidade, teste de ataque ou teste de resistência. A criatura pode esperar até depois de rolar o dado para decidir usá-lo, mas deve decidir antes do Mestre dizer se o teste foi bem-sucedido ou não. Uma vez usado, o dado de inspiração é perdido. Você pode usar essa característica um número de vezes igual ao seu modificador de Carisma (mínimo de uma vez). Você recupera todos os usos gastos quando termina um descanso longo."
+
+- agilidade_felina:
+  - nome: "Agilidade Felina"
+  - descricao: "Você pode usar a ação de Desengajar ou Esconder-se como uma ação bônus em cada um dos seus turnos."
+
+- garras_gato:
+  - nome: "Garras de Gato"
+  - descricao: "Suas garras são armas naturais, com as quais você pode desferir ataques desarmados. Se você atingir com elas, você causa 1d4 de dano cortante + seu modificador de força, em vez do dano normal de um ataque desarmado."
+
+- golpe_desarmado_extra:
+  - nome: "Golpe Desarmado Extra"
+  - descricao: "Quando você usa a ação de Ataque com um golpe desarmado ou uma arma de monge no seu turno, você pode realizar um golpe desarmado com uma ação bônus."

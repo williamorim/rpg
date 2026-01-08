@@ -261,6 +261,7 @@
       - habilidade_relacionada: "carisma"
   - tracos:
       - defesa_sem_armadura
+      - golpe_desarmado_extra
       - sem_forma
       - visao_escuro
       - segurar_folego
@@ -272,6 +273,8 @@
       - ferramentas: ["Martelo", "Limpeza"]
   - armas:
     # - lanca
+  - equipamentos:
+      - tunica_monasterio
 
 
 # ANNIKA
@@ -425,3 +428,139 @@
   - equipamentos:
     # - armadura_acolchoada
     - flauta_da_annika
+
+- grota:
+  - nome_personagem: "Grota"
+  - raca: "Tabaxi"
+  - classe: "Monge"
+  - nivel: 1
+  - idade: 29
+  - altura: "1,87m"
+  - peso: 60
+  - tamanho: "médio"
+  - deslocamento: 9
+  - bonus_iniciativa: 0
+  - idiomas:
+      - "Comum"
+  - pontos_vida: 9
+  - dado_vida: "1d8"
+  - classe_armadura: 14
+  - bonus_proficiencia: 2
+  - habilidades:
+      - forca:
+        - nome: "Força"
+        - valor: 10
+        - modificador: 1
+        - proficiencia_resistencia : true
+      - destreza:
+        - nome: "Destreza"
+        - valor: 16
+        - modificador: 3
+        - proficiencia_resistencia : true
+      - constituicao:
+        - nome: "Constituição"
+        - valor: 12
+        - modificador: 1
+        - proficiencia_resistencia : false
+      - inteligencia:
+        - nome: "Inteligência"
+        - valor: 8
+        - modificador: -1
+        - proficiencia_resistencia : false
+      - sabedoria:
+        - nome: "Sabedoria"
+        - valor: 13
+        - modificador: 1
+        - proficiencia_resistencia : false
+      - carisma:
+        - nome: "Carisma"
+        - valor: 16
+        - modificador: 3
+        - proficiencia_resistencia : false
+  - pericias:
+    - atletismo:
+      - nome: "Atletismo"
+      - proficiencia: false
+      - habilidade_relacionada: "forca"
+    - acrobacia:
+      - nome: "Acrobacia"
+      - proficiencia: true
+      - habilidade_relacionada: "destreza"
+    - furtividade:
+      - nome: "Furtividade"
+      - proficiencia: true
+      - habilidade_relacionada: "destreza"
+    - prestidigitacao:
+      - nome: "Prestidigitação"
+      - proficiencia: false
+      - habilidade_relacionada: "destreza"
+    - arcanismo:
+      - nome: "Arcanismo"
+      - proficiencia: false
+      - habilidade_relacionada: "inteligencia"
+    - historia:
+      - nome: "História"
+      - proficiencia: false
+      - habilidade_relacionada: "inteligencia"
+    - investigacao:
+      - nome: "Investigação"
+      - proficiencia: false
+      - habilidade_relacionada: "inteligencia"
+    - natureza:
+      - nome: "Natureza"
+      - proficiencia: false
+      - habilidade_relacionada: "inteligencia"
+    - religiao:
+      - nome: "Religião"
+      - proficiencia: true
+      - habilidade_relacionada: "inteligencia"
+    - adestrar animais:
+      - nome: "Adestrar Animais"
+      - proficiencia: false
+      - habilidade_relacionada: "sabedoria"
+    - intuicao:
+      - nome: "Intuição"
+      - proficiencia: false
+      - habilidade_relacionada: "sabedoria"
+    - medicina:
+      - nome: "Medicina"
+      - proficiencia: false
+      - habilidade_relacionada: "sabedoria"
+    - percepcao:
+      - nome: "Percepção"
+      - proficiencia: true
+      - habilidade_relacionada: "sabedoria"
+    - sobrevivencia:
+      - nome: "Sobrevivência"
+      - proficiencia: false
+      - habilidade_relacionada: "sabedoria"
+    - atuacao:
+      - nome: "Atuação"
+      - proficiencia: false
+      - habilidade_relacionada: "carisma"
+    - enganacao:
+      - nome: "Enganação"
+      - proficiencia: false
+      - habilidade_relacionada: "carisma"
+    - intimidacao:
+      - nome: "Intimidação"
+      - proficiencia: false
+      - habilidade_relacionada: "carisma"
+    - persuasao:
+      - nome: "Persuasão"
+      - proficiencia: false
+      - habilidade_relacionada: "carisma"
+  - tracos:
+      - agilidade_felina
+      - garras_gato
+      - visao_escuro
+      - golpe_desarmado_extra
+      - defesa_sem_armadura
+  - proficiencias: 
+      - armas: ["Armas simples", "Espadas curtas"]
+      - armaduras: []
+      - ferramentas: ["Martelo"]
+  - armas:
+    # - bordao
+  - equipamentos:
+      - tunica_monasterio

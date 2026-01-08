@@ -14,3 +14,8 @@
   - nome: "Flauta da Annika"
   - Efeitos:
     - Você pode tocar a sua flauta para prender a atenção de criaturas próximas por até 1 minuto. A cada 15 segundos, a criatura deve fazer um teste de Inteligência (CD 12) para resistir ao efeito.
+
+- tunica_monasterio:
+  - nome: "Túnica simples de monastério"
+  - Efeitos:
+    - +1 em testes de Carisma contra criaturas religiosas.

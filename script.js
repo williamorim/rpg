@@ -357,7 +357,7 @@ function renderCard(personagem){
 
   return `<article class="card" id="card-${personagem.id}">
     <div class="card-header">
-      <img class="avatar" src="${img}" alt="${personagem.nome_personagem || personagem.id}" onerror="this.src='img/token_${personagem.id}.png'" />
+      <img class="avatar" src="${img}" alt="${personagem.nome_personagem || personagem.id}" onerror="this.onerror=null; this.src='img/token_${personagem.id}.gif'" />
       <div class="card-title">${personagem.nome_personagem || personagem.id}</div>
       ${typeof (personagem.nivel ?? personagem['nível']) !== 'undefined' ? `<span class="header-level">Nível ${personagem.nivel ?? personagem['nível']}</span>` : ''}
     </div>
