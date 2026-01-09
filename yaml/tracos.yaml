@@ -1,6 +1,10 @@
-- defesa_sem_armadura:
-  - nome: "Defesa sem Armadura"
+- defesa_sem_armadura_monge:
+  - nome: "Defesa sem Armadura (monge)"
   - descricao: "Enquanto você não estiver vestindo armadura nem usando um escudo, sua Classe de Armadura é <b>10 + seu modificador de Destreza + seu modificador de Sabedoria</b>."
+
+- defesa_sem_armadura_barbaro:
+  - nome: "Defesa sem Armadura (bárbaro)"
+  - descricao: "Enquanto você não estiver vestindo armadura nem usando um escudo, sua Classe de Armadura é <b>10 + seu modificador de Destreza + seu modificador de Constituição</b>."
 
 - sem_forma:
   - nome: "Sem Forma"
@@ -53,3 +57,19 @@
 - golpe_desarmado_extra:
   - nome: "Golpe Desarmado Extra"
   - descricao: "Quando você usa a ação de Ataque com um golpe desarmado ou uma arma de monge no seu turno, você pode realizar um golpe desarmado com uma ação bônus."
+
+- concha:
+  - nome: "Concha"
+  - descricao: "CA natural dos Tortle é 12 + O valor do modificador de Constituição."
+
+- casco_forte:
+  - nome: "Casco Forte"
+  - descricao: "Com uma ação, você pode se esconder em seu casco ganhando +3 de CA. Essa deve ser a sua única ação no turno. Dentro do casco você não ataca e não se move. No inicio do seu próximo turno você tem a opção de continuar no casco ou de sair dele com uma ação bônus."
+
+- mordida:
+  - nome: "Mordida"
+  - descricao: "Sempre que você atinge uma criatura com um ataque corpo a corpo na sua vez, com uma ação bônus, você pode morder o mesmo inimigo. <b>O alvo leva 2d4 + seu modificador de Força, causando dano perfurante.</b>"
+
+- furia:
+  - nome: "Fúria"
+  - descricao: "Em combate, você pode entrar em fúria como uma ação bônus. Enquanto estiver em fúria, você ganha os seguintes benefícios se não estiver vestindo armadura pesada: <br><br><b>(1)</b> Você tem vantagem em testes de Força e testes de resistência de Força. <br><b>(2)</b> Quando você faz um ataque corpo a corpo com uma arma usando Força, você ganha um bônus de dano igual ao seu nível de bárbaro. <br><b>(3)</b> Você tem resistência a dano cortante, perfurante e contundente. <br><br> A fúria se encerra se você não realizar um ataque no seu turno."

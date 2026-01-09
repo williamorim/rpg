@@ -6,3 +6,9 @@
     - alcance: 9
     - componentes: ["S", "M"]
     - duracao: "1 minuto"
+  - chicote_espinhos:
+    - nome: "Chicote de Espinhos"
+    - tipo: "Transmutação"
+    - descricao: "Você cria um longo chicote de vinhas coberto por espinhos que chicoteia, ao seu comando, em direção de uma criatura dentro do alcance. Realize um ataque corpo-a-corpo com magia contra o alvo. Se o ataque atingir, a criatura sofrerá 1d6 de dano perfurante e, se a criatura for Grande ou menor, você a puxa até 3 metros para perto de você. <br><br> O dano dessa magia aumenta em 1d6 quando você alcança o 5° nível (2d6), 11° nível (3d6) e 17° nível (4d6)."
+    - alcance: 9
+    - componentes: ["V", "S", "M"]

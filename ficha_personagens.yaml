@@ -260,7 +260,7 @@
       - proficiencia: false
       - habilidade_relacionada: "carisma"
   - tracos:
-      - defesa_sem_armadura
+      - defesa_sem_armadura_monge
       - golpe_desarmado_extra
       - sem_forma
       - visao_escuro
@@ -555,7 +555,7 @@
       - garras_gato
       - visao_escuro
       - golpe_desarmado_extra
-      - defesa_sem_armadura
+      - defesa_sem_armadura_monge
   - proficiencias: 
       - armas: ["Armas simples", "Espadas curtas"]
       - armaduras: []
@@ -564,3 +564,143 @@
     # - bordao
   - equipamentos:
       - tunica_monasterio
+
+- tortugao:
+  - nome_personagem: "Tortugão"
+  - raca: "Tortle"
+  - classe: "Bárbaro/Druída"
+  - nivel: 1
+  - idade: 70
+  - altura: "1,70m"
+  - peso: 300
+  - tamanho: "médio"
+  - deslocamento: 7.5
+  - bonus_iniciativa: 0
+  - idiomas:
+      - "Comum"
+      - "Druídico"
+  - pontos_vida: 15
+  - dado_vida: "1d12"
+  - classe_armadura: 16
+  - bonus_proficiencia: 2
+  - habilidades:
+      - forca:
+        - nome: "Força"
+        - valor: 15
+        - modificador: 2
+        - proficiencia_resistencia : true
+      - destreza:
+        - nome: "Destreza"
+        - valor: 12
+        - modificador: 1
+        - proficiencia_resistencia : false
+      - constituicao:
+        - nome: "Constituição"
+        - valor: 16
+        - modificador: 3
+        - proficiencia_resistencia : true
+      - inteligencia:
+        - nome: "Inteligência"
+        - valor: 8
+        - modificador: -1
+        - proficiencia_resistencia : false
+      - sabedoria:
+        - nome: "Sabedoria"
+        - valor: 14
+        - modificador: 2
+        - proficiencia_resistencia : false
+      - carisma:
+        - nome: "Carisma"
+        - valor: 10
+        - modificador: 0
+        - proficiencia_resistencia : false
+  - pericias:
+    - atletismo:
+      - nome: "Atletismo"
+      - proficiencia: false
+      - habilidade_relacionada: "forca"
+    - acrobacia:
+      - nome: "Acrobacia"
+      - proficiencia: false
+      - habilidade_relacionada: "destreza"
+    - furtividade:
+      - nome: "Furtividade"
+      - proficiencia: false
+      - habilidade_relacionada: "destreza"
+    - prestidigitacao:
+      - nome: "Prestidigitação"
+      - proficiencia: false
+      - habilidade_relacionada: "destreza"
+    - arcanismo:
+      - nome: "Arcanismo"
+      - proficiencia: false
+      - habilidade_relacionada: "inteligencia"
+    - historia:
+      - nome: "História"
+      - proficiencia: false
+      - habilidade_relacionada: "inteligencia"
+    - investigacao:
+      - nome: "Investigação"
+      - proficiencia: false
+      - habilidade_relacionada: "inteligencia"
+    - natureza:
+      - nome: "Natureza"
+      - proficiencia: true
+      - habilidade_relacionada: "inteligencia"
+    - religiao:
+      - nome: "Religião"
+      - proficiencia: false
+      - habilidade_relacionada: "inteligencia"
+    - adestrar animais:
+      - nome: "Adestrar Animais"
+      - proficiencia: true
+      - habilidade_relacionada: "sabedoria"
+    - intuicao:
+      - nome: "Intuição"
+      - proficiencia: false
+      - habilidade_relacionada: "sabedoria"
+    - medicina:
+      - nome: "Medicina"
+      - proficiencia: false
+      - habilidade_relacionada: "sabedoria"
+    - percepcao:
+      - nome: "Percepção"
+      - proficiencia: true
+      - habilidade_relacionada: "sabedoria"
+    - sobrevivencia:
+      - nome: "Sobrevivência"
+      - proficiencia: true
+      - habilidade_relacionada: "sabedoria"
+    - atuacao:
+      - nome: "Atuação"
+      - proficiencia: false
+      - habilidade_relacionada: "carisma"
+    - enganacao:
+      - nome: "Enganação"
+      - proficiencia: false
+      - habilidade_relacionada: "carisma"
+    - intimidacao:
+      - nome: "Intimidação"
+      - proficiencia: false
+      - habilidade_relacionada: "carisma"
+    - persuasao:
+      - nome: "Persuasão"
+      - proficiencia: false
+      - habilidade_relacionada: "carisma"
+  - tracos:
+      - concha
+      - casco_forte
+      - defesa_sem_armadura_barbaro
+      - mordida
+      - furia
+  - truques:
+    - chicote_espinhos
+  - num_furias: 2
+  - dano_furia: 2
+  - proficiencias: 
+      - armas: ["Armas simples", "Armas marciais"]
+      - armaduras: ["Armaduras leves", "Armaduras médias", "Escudos"]
+      - ferramentas: [""]
+  - armas:
+    # - martelo_de_guerra
+  - equipamentos:

@@ -23,3 +23,9 @@
   - dano: "1d6"
   - tipo_dano: "Concussão"
   - propriedades: ["Versátil (1d8)"]
+
+- martelo_de_guerra:
+  - nome: "Martelo de Guerra"
+  - dano: "1d8"
+  - tipo_dano: "Concussão"
+  - propriedades: ["Versátil (1d10)"]
