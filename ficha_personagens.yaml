@@ -221,7 +221,7 @@
       - habilidade_relacionada: "inteligencia"
     - religiao:
       - nome: "Religião"
-      - proficiencia: false
+      - proficiencia: true
       - habilidade_relacionada: "inteligencia"
     - adestrar animais:
       - nome: "Adestrar Animais"
@@ -233,7 +233,7 @@
       - habilidade_relacionada: "sabedoria"
     - medicina:
       - nome: "Medicina"
-      - proficiencia: false
+      - proficiencia: true
       - habilidade_relacionada: "sabedoria"
     - percepcao:
       - nome: "Percepção"
