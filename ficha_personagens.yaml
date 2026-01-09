@@ -700,7 +700,7 @@
   - proficiencias: 
       - armas: ["Armas simples", "Armas marciais"]
       - armaduras: ["Armaduras leves", "Armaduras médias", "Escudos"]
-      - ferramentas: [""]
+      - ferramentas: ["Kit de herbalismo"]
   - armas:
     # - martelo_de_guerra
   - equipamentos:
