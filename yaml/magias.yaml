@@ -20,3 +20,11 @@
   - alcance: 36
   - componentes: ["V", "S"]
   - duracao: "Concentração, até 10 minutos"
+
+- raio_de_gelo:
+  - nome: "Raio de Gelo"
+  - tipo: "Evocação"
+  - descricao: "Um raio frigido de luz azul clara parte em direção de uma criatura, dentro do alcance. Realize um ataque à distância com magia contra o alvo. Se atingir, ele sofre 1d8 de dano de frio e seu deslocamento é reduzido em 3 metros até o começo do seu próximo turno. <br><br>O dano da magia aumenta em 1d8 quando você alcança o 5° nível (2d8), 11° nível (3d8) e 17° nível (4d8)."
+  - dano: "1d8 de dano de frio"
+  - alcance: 18
+  - componentes: ["V", "S"]

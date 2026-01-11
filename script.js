@@ -187,6 +187,30 @@ function buildMagiasContent(personagem){
   return `<div class="modal-magias">${items}</div>`;
 }
 
+// Lista todas as magias do catálogo em ordem alfabética
+function buildMagiasCatalogContent(catalog){
+  if(!catalog || typeof catalog !== 'object') return '<p>Nenhuma magia cadastrada.</p>';
+  const list = Object.values(catalog);
+  if(!list.length) return '<p>Nenhuma magia cadastrada.</p>';
+  const sorted = list.slice().sort((a,b)=>String(a.nome||'').localeCompare(String(b.nome||''), 'pt-BR', {sensitivity:'base'}));
+  const items = sorted.map(m => {
+    const compsColored = Array.isArray(m.componentes) ? m.componentes.map(c=>{
+      const cls = `comp-${String(c).toUpperCase()}`;
+      return `<span class="tag ${cls}">${c}</span>`;
+    }).join(' ') : '';
+    const alcanceText = (typeof m.alcance === 'number') ? `${m.alcance}m` : (typeof m.alcance !== 'undefined' ? String(m.alcance) : '');
+    return `<div class="item">
+      <h5>${m.nome || 'Magia'}</h5>
+      ${m.descricao ? `<p>${m.descricao}</p>` : ''}
+      ${m.dano ? `<p class="prop"><strong>Dano:</strong> ${m.dano}</p>` : ''}
+      ${alcanceText ? `<p class="prop"><strong>Alcance:</strong> ${alcanceText}</p>` : ''}
+      ${m.duracao ? `<p class="prop"><strong>Duração:</strong> ${m.duracao}</p>` : ''}
+      ${compsColored ? `<p>${compsColored}</p>` : ''}
+    </div>`;
+  }).join('');
+  return `<div class="modal-magias">${items}</div>`;
+}
+
 function buildEquipamentosContent(personagem){
   const equipamentos = ensureArrayFromObjectValues(personagem.equipamentos);
   if(!equipamentos.length) return '<p>Nenhum equipamento cadastrado.</p>';
@@ -354,6 +378,8 @@ function renderCard(personagem){
   const destrezaMod = (personagem.habilidades && personagem.habilidades.destreza && (personagem.habilidades.destreza.modificador || 0)) || 0;
   const bonusIni = typeof personagem.bonus_iniciativa !== 'undefined' ? (personagem.bonus_iniciativa || 0) : 0;
   const iniciativa = destrezaMod + bonusIni;
+  const inspCount = Number(personagem.inspiracao || 0);
+  const inspHtml = inspCount > 0 ? `<span class="inspiration" title="Inspirações">${'💡'.repeat(inspCount)}</span>` : '';
 
   return `<article class="card" id="card-${personagem.id}">
     <div class="card-header">
@@ -372,6 +398,7 @@ function renderCard(personagem){
         ${personagem.classe ? `<span class="chip">${personagem.classe}</span>` : ''}
         ${idiomas ? `<span class="chip">Idiomas: ${idiomas}</span>` : ''}
         <span class="initiative">Iniciativa: ${fmtBonus(iniciativa)}</span>
+        ${inspHtml}
       </div>
 
       
@@ -451,6 +478,15 @@ async function main(){
       loadCatalog('yaml/truques.yaml', 'truques'),
       loadCatalog('yaml/equipamentos.yaml')
     ]).catch(()=>[{}, {}, {}, {}, {}]);
+
+    // Header nav: open magias catalog list in modal
+    const openMagias = document.getElementById('open-magias');
+    if(openMagias){
+      openMagias.addEventListener('click', (e)=>{
+        e.preventDefault();
+        openModal('Magias', buildMagiasCatalogContent(magiasCatalog));
+      });
+    }
 
     // Resolver listas por nome para objetos do catálogo
     function resolveSelection(selection, catalog){

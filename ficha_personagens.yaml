@@ -9,6 +9,7 @@
   - tamanho: "médio"
   - deslocamento: 9
   - bonus_iniciativa: 0
+  - inspiracao: 0
   - idiomas:
       - "Comum"
       - "Auran"
@@ -155,6 +156,7 @@
   - dado_vida: "1d8"
   - classe_armadura: 16
   - bonus_proficiencia: 2
+  - inspiracao: 0
   - habilidades:
       - forca:
         - nome: "Força"
@@ -297,6 +299,7 @@
   - dado_vida: "1d8"
   - classe_armadura: 12
   - bonus_proficiencia: 2
+  - inspiracao: 0
   - habilidades:
       - forca:
         - nome: "Força"
@@ -446,6 +449,7 @@
   - dado_vida: "1d8"
   - classe_armadura: 14
   - bonus_proficiencia: 2
+  - inspiracao: 0
   - habilidades:
       - forca:
         - nome: "Força"
@@ -583,6 +587,7 @@
   - dado_vida: "1d12"
   - classe_armadura: 16
   - bonus_proficiencia: 2
+  - inspiracao: 0
   - habilidades:
       - forca:
         - nome: "Força"
