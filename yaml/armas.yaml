@@ -18,10 +18,11 @@
   - tipo_dano: "Perfurante"
   - propriedades: ["Finesse"]
 
-- bordao:
-  - nome: "Bordão"
+- bordao_um_dois:
+  - nome: "Bordão Um Dois"
   - dano: "1d6"
   - tipo_dano: "Concussão"
+  - efeito: "Ao atacar com esta arma, você pode usar uma ação bônus para fazer um ataque adicional com ela ao mesmo inimigo."
   - propriedades: ["Versátil (1d8)"]
 
 - martelo_de_guerra:

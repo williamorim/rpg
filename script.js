@@ -38,6 +38,18 @@ function imgPathFor(id){
   return `img/token_${id}.png`;
 }
 
+function slugifyNameToImage(name){
+  if(!name) return '';
+  const base = String(name)
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '') // remove diacritics
+    .toLowerCase()
+    .replace(/[^a-z0-9\s_-]+/g, '') // strip non-alphanumerics except space/_/-
+    .trim()
+    .replace(/\s+/g, '_');
+  return `${base}.png`;
+}
+
 function fmtBonus(n){
   return (n >= 0 ? "+" : "") + n;
 }
@@ -110,6 +122,34 @@ function ensureArrayFromObjectValues(obj){
   return Object.values(obj);
 }
 
+function buildSpellSlotsContent(espacos){
+  if(!espacos || typeof espacos !== 'object') return '';
+  const slots = [];
+  for(const [k,v] of Object.entries(espacos)){
+    const m = String(k).match(/^nivel_(\d+)$/);
+    if(!m) continue;
+    const nivel = Number(m[1]);
+    const qtd = Number(v) || 0;
+    if(qtd > 0){
+      slots.push({ nivel, qtd });
+    }
+  }
+  if(!slots.length) return '';
+  slots.sort((a,b)=>a.nivel - b.nivel);
+  const header = slots.map(s => `<th>Nível ${s.nivel}</th>`).join('');
+  const row = slots.map(s => {
+    const dots = Array.from({length: s.qtd}, () => `<span class="slot-dot" aria-hidden="true"></span>`).join('');
+    return `<td><div class="slot-dots" role="img" aria-label="Nível ${s.nivel}: ${s.qtd} espaços">${dots}</div></td>`;
+  }).join('');
+  return `<div class="spell-slots">
+    <h4>Espaços de Magia</h4>
+    <table class="spell-slots-table">
+      <thead><tr>${header}</tr></thead>
+      <tbody><tr>${row}</tr></tbody>
+    </table>
+  </div>`;
+}
+
 function buildArmasContent(personagem){
   const armas = ensureArrayFromObjectValues(personagem.armas);
   const items = armas.length ? armas.map(a => {
@@ -126,11 +166,26 @@ function buildArmasContent(personagem){
         if(m2){ alcanceTexto = m2[1].trim(); break; }
       }
     }
+    // Incluir efeito da arma, caso exista (string ou lista)
+    let efeitoHtml = '';
+    const efeito = (typeof a.efeito !== 'undefined') ? a.efeito : a.efeitos;
+    if(typeof efeito !== 'undefined' && efeito !== null){
+      if(Array.isArray(efeito)){
+        const listItems = efeito.map(it => {
+          const txt = (typeof it === 'string') ? it : (it && (it.nome || it.name || String(it)));
+          return `<li>${txt || ''}</li>`;
+        }).join('');
+        efeitoHtml = `<p class="effects-label"><strong>Efeitos:</strong></p><ul class="weapon-effects">${listItems}</ul>`;
+      }else{
+        efeitoHtml = `<p class="weapon-effect"><strong>Efeito:</strong> ${efeito}</p>`;
+      }
+    }
     const h5Class = a.proficiencia ? 'proficiente' : '';
     return `<div class="item">
       <h5 class="${h5Class}">${a.nome || 'Arma'}</h5>
       ${a.dano ? `<p><strong>Dano:</strong> ${a.dano}${a.tipo_dano ? ` (${a.tipo_dano})` : ''}</p>` : ''}
       ${alcanceTexto ? `<p><strong>Alcance de arremesso:</strong> ${alcanceTexto}</p>` : ''}
+      ${efeitoHtml}
       ${props ? `<p class="weapon-tags">${props}</p>` : ''}
       ${typeof a.proficiencia === 'boolean' ? '' : ''}
     </div>`;
@@ -140,13 +195,16 @@ function buildArmasContent(personagem){
 
 function buildMagiasContent(personagem){
   const magias = personagem.magias;
-  if(!magias) return '<p>Nenhuma magia cadastrada.</p>';
+  const slotsHtml = buildSpellSlotsContent(personagem.espacos_magia);
+  if(!magias){
+    return slotsHtml ? `<div class="modal-magias">${slotsHtml}<p>Nenhuma magia cadastrada.</p></div>` : '<p>Nenhuma magia cadastrada.</p>';
+  }
   if(Array.isArray(magias)){
-    if(!magias.length) return '<p>Nenhuma magia cadastrada.</p>';
+    if(!magias.length) return slotsHtml ? `<div class="modal-magias">${slotsHtml}<p>Nenhuma magia cadastrada.</p></div>` : '<p>Nenhuma magia cadastrada.</p>';
     const allStrings = magias.every(m => typeof m === 'string');
     if(allStrings){
       const items = magias.map(nome => `<div class="item"><h5>${nome}</h5></div>`).join('');
-      return `<div class="modal-magias">${items}</div>`;
+      return `<div class="modal-magias">${slotsHtml || ''}${items}</div>`;
     }
     // Array de objetos com detalhes
     const items = magias.map(m => {
@@ -164,10 +222,10 @@ function buildMagiasContent(personagem){
         ${compsColored ? `<p>${compsColored}</p>` : ''}
       </div>`;
     }).join('');
-    return `<div class="modal-magias">${items}</div>`;
+    return `<div class="modal-magias">${slotsHtml || ''}${items}</div>`;
   }
   const list = ensureArrayFromObjectValues(magias);
-  if(!list.length) return '<p>Nenhuma magia cadastrada.</p>';
+  if(!list.length) return slotsHtml ? `<div class="modal-magias">${slotsHtml}<p>Nenhuma magia cadastrada.</p></div>` : '<p>Nenhuma magia cadastrada.</p>';
   const items = list.map(m => {
     const comps = Array.isArray(m.componentes) ? m.componentes.map(c=>`<span class="tag">${c}</span>`).join(' ') : '';
     const compsColored = Array.isArray(m.componentes) ? m.componentes.map(c=>{
@@ -184,7 +242,7 @@ function buildMagiasContent(personagem){
       ${compsColored ? `<p>${compsColored}</p>` : ''}
     </div>`;
   }).join('');
-  return `<div class="modal-magias">${items}</div>`;
+  return `<div class="modal-magias">${slotsHtml || ''}${items}</div>`;
 }
 
 // Lista todas as magias do catálogo em ordem alfabética
@@ -381,6 +439,14 @@ function renderCard(personagem){
   const inspCount = Number(personagem.inspiracao || 0);
   const inspHtml = inspCount > 0 ? `<span class="inspiration" title="Inspirações">${'💡'.repeat(inspCount)}</span>` : '';
 
+  // Render class chips: single or multiple for multiclass
+  let classeHtml = '';
+  if(Array.isArray(personagem.classe)){
+    classeHtml = personagem.classe.map(cls => `<button class="chip chip-class" type="button" data-class="${cls}">${cls}</button>`).join(' ');
+  }else if(personagem.classe){
+    classeHtml = `<button class="chip chip-class" type="button" data-class="${personagem.classe}">${personagem.classe}</button>`;
+  }
+
   return `<article class="card" id="card-${personagem.id}">
     <div class="card-header">
       <img class="avatar" src="${img}" alt="${personagem.nome_personagem || personagem.id}" onerror="this.onerror=null; this.src='img/token_${personagem.id}.gif'" />
@@ -395,7 +461,7 @@ function renderCard(personagem){
       </div>
       <div class="meta">
         ${personagem.raca ? `<span class="chip">${personagem.raca}</span>` : ''}
-        ${personagem.classe ? `<span class="chip">${personagem.classe}</span>` : ''}
+        ${classeHtml}
         ${idiomas ? `<span class="chip">Idiomas: ${idiomas}</span>` : ''}
         <span class="initiative">Iniciativa: ${fmtBonus(iniciativa)}</span>
         ${inspHtml}
@@ -533,6 +599,17 @@ async function main(){
       } else if(action === 'tracos'){
         openModal(`Traços — ${personagem.nome_personagem || personagem.id}`, buildTracosContent(personagem));
       }
+    });
+
+    // Delegate clicks on class chip to open class image
+    container.addEventListener('click', (e)=>{
+      const chip = e.target.closest('.chip-class');
+      if(!chip) return;
+      const className = chip.getAttribute('data-class');
+      if(!className) return;
+      const imgFile = slugifyNameToImage(className);
+      const html = `<img src="img/${imgFile}" alt="${className}" class="modal-image" />`;
+      openModal(`Classe — ${className}`, html);
     });
 
   }catch(err){

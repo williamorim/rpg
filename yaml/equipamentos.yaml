@@ -19,3 +19,8 @@
   - nome: "Túnica simples de monastério"
   - Efeitos:
     - +1 em testes de Carisma contra criaturas religiosas.
+
+- tunica_ventania:
+  - nome: "Túnica da Ventania"
+  - Efeitos:
+    - Quando um ataque corpo a corpo acertar você e o dano for suficiente para zerar os seus pontos de vida, você pode usar uma reação para anular completamente o dano sofrido e se teletransportar para um espaço desocupado que você possa ver a até 9 metros de distância. Uma vez usada, essa habilidade não pode ser usada novamente até que você termine um descanso longo.  

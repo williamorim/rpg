@@ -116,6 +116,13 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:"Inter",system-
 .modal-magias .item p.prop{margin-top:10px}
 .modal-magias .item strong{color:#40e0d0}
 .modal-magias .item p b{color:#9575cd}
+.modal-magias .spell-slots{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px}
+.modal-magias .spell-slots h4{margin:0 0 8px 0;font-size:14px;color:var(--muted);font-weight:600}
+.spell-slots-table{width:100%;border-collapse:collapse;border:1px solid var(--border);background:var(--chip);border-radius:8px;overflow:hidden}
+.spell-slots-table thead th{border:1px solid var(--border);padding:6px 8px;text-align:center;font-size:13px;color:var(--text);background:var(--panel)}
+.spell-slots-table tbody td{border:1px solid var(--border);padding:8px;text-align:center;background:var(--card)}
+.slot-dots{display:flex;justify-content:center;gap:6px;flex-wrap:wrap}
+.slot-dot{width:10px;height:10px;border-radius:50%;background:#4da3ff;border:1px solid #4da3ff66;box-shadow:0 0 0 1px rgba(77,163,255,0.25) inset}
 .tag.comp-V{color:#fb8c00;border-color:#fb8c0033;background:linear-gradient(0deg,rgba(251,140,0,0.12),rgba(251,140,0,0.12)),var(--chip)}
 .tag.comp-S{color:#f06292;border-color:#f0629233;background:linear-gradient(0deg,rgba(240,98,146,0.12),rgba(240,98,146,0.12)),var(--chip)}
 .tag.comp-M{color:#9575cd;border-color:#9575cd33;background:linear-gradient(0deg,rgba(149,117,205,0.12),rgba(149,117,205,0.12)),var(--chip)}

@@ -132,8 +132,18 @@
     - armas: ["Adagas", "Dardos", "Bordões", "Bestas leve"]
     - armaduras: []
     - ferramentas: ["Quaisquer ferramentas que você já viu sendo utilizada"]
+  - espacos_magia:
+      - nivel_1: 2
+      - nivel_2: 0
+      - nivel_3: 0
+      - nivel_4: 0
+      - nivel_5: 0
+      - nivel_6: 0
+      - nivel_7: 0
+      - nivel_8: 0
+      - nivel_9: 0
   - armas:
-    # - adaga
+    - adaga
   - equipamentos:
       - tunica_velha
 
@@ -274,7 +284,7 @@
       - armaduras: []
       - ferramentas: ["Martelo", "Limpeza"]
   - armas:
-    # - lanca
+    - lanca
   - equipamentos:
       - tunica_monasterio
 
@@ -427,7 +437,7 @@
   - truques:
     - amizade
   - armas:
-    # - rapieira
+    - rapieira
   - equipamentos:
     # - armadura_acolchoada
     - flauta_da_annika
@@ -565,14 +575,14 @@
       - armaduras: []
       - ferramentas: ["Martelo"]
   - armas:
-    # - bordao
+    - bordao_um_dois
   - equipamentos:
-      - tunica_monasterio
+      - tunica_ventania
 
 - tortugao:
   - nome_personagem: "Tortugão"
   - raca: "Tortle"
-  - classe: "Bárbaro/Druída"
+  - classe: ["Bárbaro", "Druída"]
   - nivel: 1
   - idade: 70
   - altura: "1,70m"
@@ -706,6 +716,16 @@
       - armas: ["Armas simples", "Armas marciais"]
       - armaduras: ["Armaduras leves", "Armaduras médias", "Escudos"]
       - ferramentas: ["Kit de herbalismo"]
+  - espacos_magia:
+      - nivel_1: 2
+      - nivel_2: 0
+      - nivel_3: 0
+      - nivel_4: 0
+      - nivel_5: 0
+      - nivel_6: 0
+      - nivel_7: 0
+      - nivel_8: 0
+      - nivel_9: 0
   - armas:
-    # - martelo_de_guerra
+    - martelo_de_guerra
   - equipamentos:
