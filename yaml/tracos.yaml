@@ -6,6 +6,10 @@
   - nome: "Defesa sem Armadura (bárbaro)"
   - descricao: "Enquanto você não estiver vestindo armadura nem usando um escudo, sua Classe de Armadura é <b>10 + seu modificador de Destreza + seu modificador de Constituição</b>."
 
+- deslocamento_sem_armadura_monge:
+  - nome: "Deslocamento sem Armadura (monge)"
+  - descricao: "Seu deslocamento aumenta em 3 metros enquanto você não estiver vestindo armadura nem usando um escudo."
+
 - sem_forma:
   - nome: "Sem Forma"
   - descricao: "Você pode se espremer através de um espaço tão estreito quanto 2,5 cm de largura, desde que não esteja vestindo ou carregando nada. Você também tem <b>vantagem em testes de habilidade que fizer para iniciar ou escapar de uma agarração</b>."

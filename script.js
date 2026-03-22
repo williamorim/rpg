@@ -25,6 +25,16 @@ function normalize(value){
   return value;
 }
 
+function normalizeCatalogData(data, topKey){
+  if(typeof data === 'undefined' || data === null) return {};
+  const normalized = normalize(data);
+  const catalog = topKey && normalized && typeof normalized === 'object' && !Array.isArray(normalized) && normalized[topKey]
+    ? normalized[topKey]
+    : normalized;
+
+  return catalog && typeof catalog === 'object' ? normalize(catalog) : {};
+}
+
 function parseCharacters(data){
   // Top-level is a list of singleton objects: [{flip: [...]}, ...]
   return data.map(entry => {
@@ -269,6 +279,29 @@ function buildMagiasCatalogContent(catalog){
   return `<div class="modal-magias">${items}</div>`;
 }
 
+function buildTruquesCatalogContent(catalog){
+  if(!catalog || typeof catalog !== 'object') return '<p>Nenhum truque cadastrado.</p>';
+  const list = Object.values(catalog);
+  if(!list.length) return '<p>Nenhum truque cadastrado.</p>';
+  const sorted = list.slice().sort((a,b)=>String(a.nome||'').localeCompare(String(b.nome||''), 'pt-BR', {sensitivity:'base'}));
+  const items = sorted.map(t => {
+    const compsColored = Array.isArray(t.componentes) ? t.componentes.map(c=>{
+      const cls = `comp-${String(c).toUpperCase()}`;
+      return `<span class="tag ${cls}">${c}</span>`;
+    }).join(' ') : '';
+    const alcanceText = (typeof t.alcance === 'number') ? `${t.alcance}m` : (typeof t.alcance !== 'undefined' ? String(t.alcance) : '');
+    return `<div class="item">
+      <h5>${t.nome || 'Truque'}</h5>
+      ${t.descricao ? `<p>${t.descricao}</p>` : ''}
+      ${t.dano ? `<p class="prop"><strong>Dano:</strong> ${t.dano}</p>` : ''}
+      ${alcanceText ? `<p class="prop"><strong>Alcance:</strong> ${alcanceText}</p>` : ''}
+      ${t.duracao ? `<p class="prop"><strong>Duração:</strong> ${t.duracao}</p>` : ''}
+      ${compsColored ? `<p>${compsColored}</p>` : ''}
+    </div>`;
+  }).join('');
+  return `<div class="modal-truques">${items}</div>`;
+}
+
 function buildEquipamentosContent(personagem){
   const equipamentos = ensureArrayFromObjectValues(personagem.equipamentos);
   if(!equipamentos.length) return '<p>Nenhum equipamento cadastrado.</p>';
@@ -436,6 +469,10 @@ function renderCard(personagem){
   const destrezaMod = (personagem.habilidades && personagem.habilidades.destreza && (personagem.habilidades.destreza.modificador || 0)) || 0;
   const bonusIni = typeof personagem.bonus_iniciativa !== 'undefined' ? (personagem.bonus_iniciativa || 0) : 0;
   const iniciativa = destrezaMod + bonusIni;
+  const deslocamento = personagem.deslocamento;
+  const deslocamentoBase = typeof deslocamento !== 'undefined'
+    ? `<span class="deslocamento-base">Deslocamento base: ${typeof deslocamento === 'number' ? `${deslocamento}m` : deslocamento}</span>`
+    : '';
   const inspCount = Number(personagem.inspiracao || 0);
   const inspHtml = inspCount > 0 ? `<span class="inspiration" title="Inspirações">${'💡'.repeat(inspCount)}</span>` : '';
 
@@ -464,6 +501,7 @@ function renderCard(personagem){
         ${classeHtml}
         ${idiomas ? `<span class="chip">Idiomas: ${idiomas}</span>` : ''}
         <span class="initiative">Iniciativa: ${fmtBonus(iniciativa)}</span>
+        ${deslocamentoBase}
         ${inspHtml}
       </div>
 
@@ -532,8 +570,7 @@ async function main(){
     async function loadCatalog(path, topKey){
       const r = await fetch(path);
       const t = await r.text();
-      const data = normalize(jsyaml.load(t));
-      return topKey && data && data[topKey] ? data[topKey] : data;
+      return normalizeCatalogData(jsyaml.load(t), topKey);
     }
 
     // Carregar catálogos (armas, magias, traços, truques, equipamentos)
@@ -554,12 +591,20 @@ async function main(){
       });
     }
 
+    const openTruques = document.getElementById('open-truques');
+    if(openTruques){
+      openTruques.addEventListener('click', (e)=>{
+        e.preventDefault();
+        openModal('Truques', buildTruquesCatalogContent(truquesCatalog));
+      });
+    }
+
     // Resolver listas por nome para objetos do catálogo
     function resolveSelection(selection, catalog){
       if(!selection) return selection;
       const toObj = (name)=>{
         const item = catalog && catalog[name];
-        if(item && typeof item === 'object') return item;
+        if(item && typeof item === 'object') return normalize(item);
         return { nome: name };
       };
       if(Array.isArray(selection)){

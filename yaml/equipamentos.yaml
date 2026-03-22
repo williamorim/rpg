@@ -13,7 +13,8 @@
 - flauta_da_annika:
   - nome: "Flauta da Annika"
   - Efeitos:
-    - Você pode tocar a sua flauta para prender a atenção de criaturas próximas por até 1 minuto. A cada 15 segundos, a criatura deve fazer um teste de Inteligência (CD 12) para resistir ao efeito.
+    - Você pode tocar a sua flauta para prender a atenção de criaturas próximas por até 1 minuto. A cada 15 segundos, a criatura deve fazer um teste de Inteligência (CD 12) para resistir ao efeito. <br><br>
+    # - Você pode tocar a sua flauta para conceder os benefícios do truque "Orientação" a uma criatura até que escutou a música.
 
 - tunica_monasterio:
   - nome: "Túnica simples de monastério"
@@ -23,4 +24,19 @@
 - tunica_ventania:
   - nome: "Túnica da Ventania"
   - Efeitos:
-    - Quando um ataque corpo a corpo acertar você e o dano for suficiente para zerar os seus pontos de vida, você pode usar uma reação para anular completamente o dano sofrido e se teletransportar para um espaço desocupado que você possa ver a até 9 metros de distância. Uma vez usada, essa habilidade não pode ser usada novamente até que você termine um descanso longo.  
+    - Quando um ataque corpo a corpo acertar você e o dano for suficiente para zerar os seus pontos de vida, você pode usar uma reação para anular completamente o dano sofrido e se teletransportar para um espaço desocupado que você possa ver a até 9 metros de distância. Uma vez usada, essa habilidade não pode ser usada novamente até que você termine um descanso longo.
+
+- anel_desesperado:
+  - nome: "Anel do Desesperado"
+  - Efeitos:
+    - Para colocar o anel, você precisa rolar 1d20. A classe de dificuldade é proporcional ao seu desespero. O efeito do anel é desconhecido.
+
+- colar_presto:
+  - nome: "Colar do Presto"
+  - Efeitos:
+    - Sempre que você derrotar um inimigo, o colar absorve 1 de energia. Você pode usar cada energia para rolar 1d6.<br><br>1. Recupera metade dos seus pontos de vida<br>2. Você só consegue falar cantando por 1 hora<br>3. Você fica invisível por 1 hora (seu equipamento não fica invisível)<br>4. Você ganha -5 em rolagens de ataque e +10 de dano com armas que você é proficiente até um descanso longo.<br>5. Uma criatura a até 60m de você vira uma galinha por 1 hora<br>6. Você ganha vantagem em todas as suas rolagens de ataques até um descanso longo.
+
+- livro_historia_tabaxi:
+  - nome: "Livro A História dos Tabaxi"
+  - Efeitos:
+    - A capa e as páginas do livro estão em branco. Apenas o título é visível na lombada.

@@ -21,10 +21,26 @@
   - componentes: ["V", "S"]
   - duracao: "Concentração, até 10 minutos"
 
-- raio_de_gelo:
-  - nome: "Raio de Gelo"
+- onda_trovejante:
+  - nome: "Onda Trovejante"
   - tipo: "Evocação"
-  - descricao: "Um raio frigido de luz azul clara parte em direção de uma criatura, dentro do alcance. Realize um ataque à distância com magia contra o alvo. Se atingir, ele sofre 1d8 de dano de frio e seu deslocamento é reduzido em 3 metros até o começo do seu próximo turno. <br><br>O dano da magia aumenta em 1d8 quando você alcança o 5° nível (2d8), 11° nível (3d8) e 17° nível (4d8)."
-  - dano: "1d8 de dano de frio"
-  - alcance: 18
+  - descricao: "Uma onda de força trovejante varre tudo a partir de você. Cada criatura num cubo de 4,5 metros originado em você, deve realizar um teste de resistência de Constituição. Se falhar na resistência, uma criatura sofrerá 2d8 de dano trovejante e será empurrada 3 metros para longe de você. Se obtive sucesso na resistência, a criatura sofrerá metade desse dano e não será empurrada. <br><br> Além disso, objetos soltos que estiverem completamente dentro da área de efeito serão automaticamente empurrados 3 metros para longe de você pelo efeito da magia e a magia emitirá um ressonante barulho de trovão audível a até 90 metros. <br><br> Quando você conjurar essa magia usando um espaço de magia de 2° nível ou superior, o dano aumenta em 1d8 para cada nível acima do 1°"
+  - dano: "2d8 de dano trovejante"
+  - alcance: "Cubo de 4,5 metros"
   - componentes: ["V", "S"]
+
+- disfarce:
+    nome: "Disfarçar-se"
+    tipo: "Ilusão"
+    descricao: "Você faz com que você mesmo – incluindo suas roupas, armadura, armas e outros pertences no seu personagem – pareça diferente até a magia acabar ou até você usar sua ação para dispensa-la. Você pode se parecer 30 centímetros mais baixo ou mais alto, e pode parecer magro, gordo ou entre ambos. Você não pode mudar o tipo do seu corpo, portanto, você deve adotar uma forma que tenha a mesma disposição básica de membros. No mais, a extensão da sua ilusão cabe a você. <br><br> As mudanças criadas por essa magia não conseguem se sustentar perante uma inspeção física. Por exemplo, se você usar essa magia para adicionar um chapéu ao seu visual, objetos que passarem pelo chapéu e qualquer um que tocá-lo não sentirá nada ou sentirá sua cabeça e cabelo. Se você usar essa magia para aparentar ser mais magro do que é, a mão de alguém que a erguer para tocar em você, irá esbarrar em você enquanto ainda está, aparentemente, está no ar. <br><br> Para perceber que você está disfarçado, uma criatura pode usar a ação dela para inspecionar sua aparência e deve ser bem sucedida em um teste de Int"
+    alcance: "Pessoal"
+    componentes: ["V", "S"]
+    duracao: "Concentração, até 1 hora"
+
+- fogo_fadas:
+    nome: "Fogo das Fadas"
+    tipo: "Evocação"
+    descricao: "Cada objeto num cubo de 6 metros dentro do alcance fica delineado com luz azul, verde ou violeta (à sua escolha). Qualquer criatura na área, quando a magia é conjurada, também fica delineada com luz se falhar num teste de resistência de Destreza. Pela duração, qualquer jogada de ataque contra uma criatura afetada ou objeto tem vantagem e, se o atacante puder ver o alvo, a criatura afetada ou objeto não recebe benefício por estar invisível."
+    alcance: "Alcance 18 metros"
+    componentes: ["V"]
+    duracao: "Concentração, até 1 minuto"

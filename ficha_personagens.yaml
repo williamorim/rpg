@@ -128,6 +128,9 @@
   - magias:
       - misseis_magicos
       - silencio
+      # - onda_trovejante
+  - truques:
+      - raio_de_gelo
   - proficiencias: 
     - armas: ["Adagas", "Dardos", "Bordões", "Bestas leve"]
     - armaduras: []
@@ -273,6 +276,7 @@
       - habilidade_relacionada: "carisma"
   - tracos:
       - defesa_sem_armadura_monge
+      - deslocamento_sem_armadura_monge
       - golpe_desarmado_extra
       - sem_forma
       - visao_escuro
@@ -307,7 +311,7 @@
       - "Élfico"
   - pontos_vida: 9
   - dado_vida: "1d8"
-  - classe_armadura: 12
+  - classe_armadura: 13
   - bonus_proficiencia: 2
   - inspiracao: 0
   - habilidades:
@@ -439,8 +443,10 @@
   - armas:
     - rapieira
   - equipamentos:
-    # - armadura_acolchoada
+    - armadura_acolchoada
     - flauta_da_annika
+
+# GROTA
 
 - grota:
   - nome_personagem: "Grota"
@@ -570,6 +576,7 @@
       - visao_escuro
       - golpe_desarmado_extra
       - defesa_sem_armadura_monge
+      - deslocamento_sem_armadura_monge
   - proficiencias: 
       - armas: ["Armas simples", "Espadas curtas"]
       - armaduras: []
