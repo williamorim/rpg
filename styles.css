@@ -8,7 +8,7 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:"Inter",system-
 .site-actions .nav-link{color:var(--muted);text-decoration:none;font-weight:600}
 .site-actions .nav-link:hover{color:var(--text)}
 
-.cards-grid{display:grid;gap:16px;padding:16px;grid-template-columns:repeat(3,1fr)}
+.cards-grid{display:grid;gap:16px;padding:16px;grid-template-columns:1fr}
 
 .card{background:var(--panel);border:1px solid var(--border);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
 .card-header{position:relative;display:flex;align-items:center;gap:12px;padding:12px;border-bottom:1px solid var(--border)}
@@ -144,10 +144,10 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:"Inter",system-
   .skill-list{grid-template-columns:1fr}
 }
 
-/* Grid responsiveness: max 3 per row, then 2, then 1 */
-@media (max-width: 960px){
+/* Grid responsiveness: 2 only above 900px; 3 only above 1300px */
+@media (min-width: 901px){
   .cards-grid{grid-template-columns:repeat(2,1fr)}
 }
-@media (max-width: 560px){
-  .cards-grid{grid-template-columns:1fr}
+@media (min-width: 1301px){
+  .cards-grid{grid-template-columns:repeat(3,1fr)}
 }
