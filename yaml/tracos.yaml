@@ -77,3 +77,12 @@
 - furia:
   - nome: "Fúria"
   - descricao: "Em combate, você pode entrar em fúria como uma ação bônus. Enquanto estiver em fúria, você ganha os seguintes benefícios se não estiver vestindo armadura pesada: <br><br><b>(1)</b> Você tem vantagem em testes de Força e testes de resistência de Força. <br><b>(2)</b> Quando você faz um ataque corpo a corpo com uma arma usando Força, você ganha um bônus de dano igual ao seu nível de bárbaro. <br><b>(3)</b> Você tem resistência a dano cortante, perfurante e contundente. <br><br> A fúria se encerra se você não realizar um ataque no seu turno."
+
+
+- ataque_descuidado:
+  - nome: "Ataque Descuidado"
+  - descricao: "Quando você fizer o seu primeiro ataque no turno, você pode decidir atacar descuidadamente. Fazer isso lhe concede vantagem nas jogadas de ataque com armas corpo-a-corpo usando Força durante seu turno, porém, as jogadas de ataques feitas contra você possuem vantagem até o início do seu próximo turno."
+
+- sentido_perigo:
+  - nome: "Sentido do Perigo"
+  - descricao: "Você possui vantagem em testes de resistência de Destreza contra efeitos que você possa ver, como armadilhas e magias. Para receber esse benefício você não pode estar cego, surdo ou incapacitado."

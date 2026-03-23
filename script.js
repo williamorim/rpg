@@ -473,6 +473,19 @@ function renderCard(personagem){
   const deslocamentoBase = typeof deslocamento !== 'undefined'
     ? `<span class="deslocamento-base">Deslocamento base: ${typeof deslocamento === 'number' ? `${deslocamento}m` : deslocamento}</span>`
     : '';
+  const classes = Array.isArray(personagem.classe)
+    ? personagem.classe
+    : (personagem.classe ? [personagem.classe] : []);
+  const isBarbaro = classes.some(cls => String(cls)
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase() === 'barbaro');
+  const furiasHtml = isBarbaro && typeof personagem.num_furias !== 'undefined'
+    ? `<span class="fury-info">Fúrias: ${personagem.num_furias}</span>`
+    : '';
+  const danoFuriaHtml = isBarbaro && typeof personagem.dano_furia !== 'undefined'
+    ? `<span class="fury-info">Dano de Fúria: ${personagem.dano_furia}</span>`
+    : '';
   const inspCount = Number(personagem.inspiracao || 0);
   const inspHtml = inspCount > 0 ? `<span class="inspiration" title="Inspirações">${'💡'.repeat(inspCount)}</span>` : '';
 
@@ -502,6 +515,8 @@ function renderCard(personagem){
         ${idiomas ? `<span class="chip">Idiomas: ${idiomas}</span>` : ''}
         <span class="initiative">Iniciativa: ${fmtBonus(iniciativa)}</span>
         ${deslocamentoBase}
+        ${furiasHtml}
+        ${danoFuriaHtml}
         ${inspHtml}
       </div>
 

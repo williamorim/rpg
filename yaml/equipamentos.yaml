@@ -40,3 +40,9 @@
   - nome: "Livro A História dos Tabaxi"
   - Efeitos:
     - A capa e as páginas do livro estão em branco. Apenas o título é visível na lombada.
+
+
+- anel_guerra:
+  - nome: "Anel de Guerra"
+  - Efeitos:
+    - +1 em rolagem de ataque com armas de 2 mãos.

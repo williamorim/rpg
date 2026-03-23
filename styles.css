@@ -28,6 +28,7 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:"Inter",system-
 .meta .level{display:none}
 .meta .initiative{margin-left:auto;color:#fb8c00;font-size:14px;font-weight:800}
 .meta .deslocamento-base{flex-basis:100%;text-align:right;color:var(--muted);font-size:12px;margin-top:2px}
+.meta .fury-info{flex-basis:100%;text-align:left;color:#ff6b6b;font-size:12px;font-weight:700}
 .meta .inspiration{flex-basis:100%;text-align:right;font-size:16px;margin-top:4px}
 .chip .icon{width:14px;height:14px;display:inline-block}
 .chip.pv{color:#ff6b6b;border-color:#ff6b6b33;background:linear-gradient(0deg,rgba(255,107,107,0.12),rgba(255,107,107,0.12)),var(--chip)}
