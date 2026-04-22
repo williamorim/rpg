@@ -9,6 +9,7 @@
 
 - misseis_magicos:
   - nome: "Mísseis Mágicos"
+  - nivel: 1
   - descricao: "Você cria três dardos brilhantes de energia mística. Cada dardo atinge uma criatura, à sua escolha, que você possa ver, dentro do alcance. Um dardo causa 1d4 + 1 de dano de energia ao alvo. Todos os dardos atingem simultaneamente e você pode direciona-los para atingir uma criatura ou várias."
   - dano: "1d4 + 1 de dano de energia"
   - alcance: 36
@@ -16,6 +17,7 @@
 
 - silencio:
   - nome: "Silêncio"
+  - nivel: 2
   - descricao: "Pela duração, nenhum som pode ser criado dentro ou atravessar uma esfera de <b>6 metros de raio</b> centrada num ponto, à sua escolha, dentro do alcance. Qualquer criatura ou objeto totalmente dentro da esfera é imune a dano trovejante e as criaturas estarão surdas enquanto estiverem completamente dentro dela. Conjurar magias que incluam a componente verbal é impossível ai."
   - alcance: 36
   - componentes: ["V", "S"]
@@ -24,6 +26,7 @@
 - onda_trovejante:
   - nome: "Onda Trovejante"
   - tipo: "Evocação"
+  - nivel: 1
   - descricao: "Uma onda de força trovejante varre tudo a partir de você. Cada criatura num cubo de 4,5 metros originado em você, deve realizar um teste de resistência de Constituição. Se falhar na resistência, uma criatura sofrerá 2d8 de dano trovejante e será empurrada 3 metros para longe de você. Se obtive sucesso na resistência, a criatura sofrerá metade desse dano e não será empurrada. <br><br> Além disso, objetos soltos que estiverem completamente dentro da área de efeito serão automaticamente empurrados 3 metros para longe de você pelo efeito da magia e a magia emitirá um ressonante barulho de trovão audível a até 90 metros. <br><br> Quando você conjurar essa magia usando um espaço de magia de 2° nível ou superior, o dano aumenta em 1d8 para cada nível acima do 1°"
   - dano: "2d8 de dano trovejante"
   - alcance: "Cubo de 4,5 metros"
@@ -32,6 +35,7 @@
 - disfarce:
     nome: "Disfarçar-se"
     tipo: "Ilusão"
+    nivel: 1
     descricao: "Você faz com que você mesmo – incluindo suas roupas, armadura, armas e outros pertences no seu personagem – pareça diferente até a magia acabar ou até você usar sua ação para dispensa-la. Você pode se parecer 30 centímetros mais baixo ou mais alto, e pode parecer magro, gordo ou entre ambos. Você não pode mudar o tipo do seu corpo, portanto, você deve adotar uma forma que tenha a mesma disposição básica de membros. No mais, a extensão da sua ilusão cabe a você. <br><br> As mudanças criadas por essa magia não conseguem se sustentar perante uma inspeção física. Por exemplo, se você usar essa magia para adicionar um chapéu ao seu visual, objetos que passarem pelo chapéu e qualquer um que tocá-lo não sentirá nada ou sentirá sua cabeça e cabelo. Se você usar essa magia para aparentar ser mais magro do que é, a mão de alguém que a erguer para tocar em você, irá esbarrar em você enquanto ainda está, aparentemente, está no ar. <br><br> Para perceber que você está disfarçado, uma criatura pode usar a ação dela para inspecionar sua aparência e deve ser bem sucedida em um teste de Int"
     alcance: "Pessoal"
     componentes: ["V", "S"]
@@ -40,7 +44,27 @@
 - fogo_fadas:
     nome: "Fogo das Fadas"
     tipo: "Evocação"
+    nivel: 1
     descricao: "Cada objeto num cubo de 6 metros dentro do alcance fica delineado com luz azul, verde ou violeta (à sua escolha). Qualquer criatura na área, quando a magia é conjurada, também fica delineada com luz se falhar num teste de resistência de Destreza. Pela duração, qualquer jogada de ataque contra uma criatura afetada ou objeto tem vantagem e, se o atacante puder ver o alvo, a criatura afetada ou objeto não recebe benefício por estar invisível."
     alcance: "Alcance 18 metros"
     componentes: ["V"]
     duracao: "Concentração, até 1 minuto"
+  
+
+- levitacao:
+    nome: "Levitação"
+    tipo: "Transmutação"
+    nivel: 2
+    descricao: "Uma criatura ou objeto de até 250 kg, à sua escolha, que você possa ver dentro do alcance sobe verticalmente, até 6 metros, e fica suspensa no ar. Uma criatura involuntária que for bem sucedida num teste de resistência de Constituição não é afetada<br><br> O alvo pode se mover apenas ao puxar ou empurrar um objeto fixo ou superfície ao seu alcance (como um muro ou teto), permitindo que ele se mova como se estivesse escalando. Você pode mudar a altitude do alvo em até 6 metros em ambas as direções no seu turno. Se você for o alvo, você pode se mover para cima ou para baixo como parte do seu movimento. Do contrário, você precisa usar sua ação para mover o alvo, que deve permanecer dentro do alcance da magia. <br><br> Quando a magia acaba, o alvo flutua suavemente até o chão, se ele ainda estiver no ar."
+    alcance: "Alcance 18 metros"
+    componentes: ["V", "S", "M (uma pena de águia ou um pedaço de lã)"]
+    duracao: "Concentração, até 10 minutos"
+
+- invisibilidade:
+    nome: "Invisibilidade"
+    tipo: "Ilusão"
+    nivel: 2
+    descricao: "Uma criatura que você tocar, se torna invisível até a magia acabar. Qualquer coisa que o alvo esteja vestindo ou carregando fica invisível enquanto estiver de posse do alvo. A magia termina para o alvo caso ele ataque ou conjure uma magia. <br><br> Se você conjurar essa magia usando um espaço de magia de 3° nível ou superior, pode afetar uma criatura adicional para cada nível do espaço acima do 2°."
+    alcance: "Toque"
+    componentes: ["V", "S", "M (um pedaço de vidro ou cristal)"]
+    duracao: "Concentração, até 1 hora"

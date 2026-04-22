@@ -46,3 +46,9 @@
   - nome: "Anel de Guerra"
   - Efeitos:
     - +1 em rolagem de ataque com armas de 2 mãos.
+
+- colar_diamantes:
+  - nome: "Colar de Diamantes"
+
+- anel_rubi:
+  - nome: "Anel de Rubi"

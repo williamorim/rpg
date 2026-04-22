@@ -86,3 +86,15 @@
 - sentido_perigo:
   - nome: "Sentido do Perigo"
   - descricao: "Você possui vantagem em testes de resistência de Destreza contra efeitos que você possa ver, como armadilhas e magias. Para receber esse benefício você não pode estar cego, surdo ou incapacitado."
+
+- instinto_violento:
+  - nome: "Instinto Violento"
+  - descricao: "Sempre que derrotar um inimigo, você terá o desejo de fazer isso de forma violenta. Para negar esse desejo, terá que passar em um teste de resistência de inteligência (CD 12). Se falhar no teste ou decidir por conta própria seguir esse desejo, todos em sua volta ficam precisam passar por um teste de resistência de inteligência (CD 14) ou ficaram em choque (não podem realizar ações por 1 turno)."
+
+- alquimia_menor:
+  - nome: "Alquimia Menor"
+  - descricao: "Você pode transformar água em uma poção de cura menor. O procedimento dura 1 hora e a substância volta a ser água após 24 horas. Você também pode alterar, com taxa de 30cm a cada 10 minutos, a composição de madeira, pedra (mas não uma pedra preciosa), ferro, cobre ou prata, transformando-o em um material diferente dentre esses. O material volta a sua composição original após 1 hora."
+
+- sintonia_plasmoide:
+  - nome: "Sintonia Plasmoide"
+  - descricao: "Você está cada vez mais em sintonia com o seu corpo. Seus ataques desarmados agora causam 3 + Modificador de Força de dano."

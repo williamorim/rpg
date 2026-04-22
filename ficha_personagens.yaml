@@ -2,7 +2,7 @@
   - nome_personagem: Flip
   - raca: "Kenku"
   - classe: "Mago"
-  - nivel: 1
+  - nivel: 2
   - idade: 10
   - altura: 1.5
   - peso: 42
@@ -13,7 +13,7 @@
   - idiomas:
       - "Comum"
       - "Auran"
-  - pontos_vida: 7
+  - pontos_vida: 9
   - dado_vida: "1d6"
   - classe_armadura: 13
   - bonus_proficiencia: 2
@@ -125,19 +125,22 @@
       - falsificacao
       - treinamento_kenku
       - mimetismo
+      - instinto_violento
   - magias:
       - misseis_magicos
       - silencio
-      # - onda_trovejante
+      - onda_trovejante
+      - levitacao
   - truques:
       - raio_de_gelo
+      - toque_arrepiante
   - proficiencias: 
     - armas: ["Adagas", "Dardos", "Bordões", "Bestas leve"]
     - armaduras: []
     - ferramentas: ["Quaisquer ferramentas que você já viu sendo utilizada"]
   - espacos_magia:
-      - nivel_1: 2
-      - nivel_2: 0
+      - nivel_1: 3
+      - nivel_2: 1
       - nivel_3: 0
       - nivel_4: 0
       - nivel_5: 0
@@ -156,16 +159,16 @@
   - nome_personagem: "Zorb"
   - raca: "Plasmoide"
   - classe: "Monge"
-  - nivel: 1
+  - nivel: 2
   - idade: 15
   - altura: "0,5 a 3,5m"
   - peso: 76
   - tamanho: "médio"
-  - deslocamento: 9
+  - deslocamento: 12
   - bonus_iniciativa: 0
   - idiomas:
       - "Comum"
-  - pontos_vida: 9
+  - pontos_vida: 12
   - dado_vida: "1d8"
   - classe_armadura: 16
   - bonus_proficiencia: 2
@@ -283,6 +286,7 @@
       - segurar_folego
       - resiliencia_natural
       - moldar_se
+      - sintonia_plasmoide
   - proficiencias: 
       - armas: ["Armas simples", "Espadas curtas"]
       - armaduras: []
@@ -309,7 +313,7 @@
   - idiomas:
       - "Comum"
       - "Élfico"
-  - pontos_vida: 9
+  - pontos_vida: 14
   - dado_vida: "1d8"
   - classe_armadura: 13
   - bonus_proficiencia: 2
@@ -427,8 +431,8 @@
       - armaduras: ["Armaduras leves"]
       - ferramentas: ["Flauta", "Alaúde", "Lira"]
   - espacos_magia:
-      - nivel_1: 2
-      - nivel_2: 0
+      - nivel_1: 3
+      - nivel_2: 1
       - nivel_3: 0
       - nivel_4: 0
       - nivel_5: 0
@@ -438,8 +442,12 @@
       - nivel_9: 0
   - magias:
     - curar_ferimentos
+    - fogo_fadas
+    - disfarce
+    - invisibilidade
   - truques:
     - amizade
+    - orientacao
   - armas:
     - rapieira
   - equipamentos:
@@ -461,7 +469,7 @@
   - bonus_iniciativa: 0
   - idiomas:
       - "Comum"
-  - pontos_vida: 9
+  - pontos_vida: 14
   - dado_vida: "1d8"
   - classe_armadura: 14
   - bonus_proficiencia: 2
@@ -585,6 +593,8 @@
     - bordao_um_dois
   - equipamentos:
       - tunica_ventania
+      - colar_diamantes
+      - anel_rubi
 
 - tortugao:
   - nome_personagem: "Tortugão"
@@ -600,7 +610,7 @@
   - idiomas:
       - "Comum"
       - "Druídico"
-  - pontos_vida: 15
+  - pontos_vida: 17
   - dado_vida: "1d12"
   - classe_armadura: 16
   - bonus_proficiencia: 2
@@ -717,6 +727,8 @@
       - furia
   - truques:
     - chicote_espinhos
+  - magias:
+    - curar_ferimentos
   - num_furias: 2
   - dano_furia: 2
   - proficiencias: 
@@ -724,8 +736,8 @@
       - armaduras: ["Armaduras leves", "Armaduras médias", "Escudos"]
       - ferramentas: ["Kit de herbalismo"]
   - espacos_magia:
-      - nivel_1: 2
-      - nivel_2: 0
+      - nivel_1: 3
+      - nivel_2: 1
       - nivel_3: 0
       - nivel_4: 0
       - nivel_5: 0

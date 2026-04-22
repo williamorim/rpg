@@ -203,6 +203,66 @@ function buildArmasContent(personagem){
   return `<div class="modal-armas">${items}</div>`;
 }
 
+function getSpellLevel(spell){
+  if(!spell || typeof spell !== 'object') return 0;
+  const raw = spell.nivel;
+  if(typeof raw === 'number' && Number.isFinite(raw)) return raw;
+  if(typeof raw === 'string'){
+    const match = raw.match(/\d+/);
+    if(match) return Number(match[0]);
+  }
+  return 0;
+}
+
+function buildSpellItem(m){
+  const compsColored = Array.isArray(m.componentes) ? m.componentes.map(c=>{
+    const cls = `comp-${String(c).toUpperCase()}`;
+    return `<span class="tag ${cls}">${c}</span>`;
+  }).join(' ') : '';
+  const alcanceText = (typeof m.alcance === 'number') ? `${m.alcance}m` : (typeof m.alcance !== 'undefined' ? String(m.alcance) : '');
+  return `<div class="item">
+    <h5>${m.nome || 'Magia'}</h5>
+    ${m.descricao ? `<p>${m.descricao}</p>` : ''}
+    ${m.dano ? `<p class="prop"><strong>Dano:</strong> ${m.dano}</p>` : ''}
+    ${alcanceText ? `<p class="prop"><strong>Alcance:</strong> ${alcanceText}</p>` : ''}
+    ${m.duracao ? `<p class="prop"><strong>Duração:</strong> ${m.duracao}</p>` : ''}
+    ${compsColored ? `<p>${compsColored}</p>` : ''}
+  </div>`;
+}
+
+function buildSpellTabsContent(spells){
+  const spellsByLevel = new Map();
+  for(const spell of spells){
+    const nivel = getSpellLevel(spell);
+    if(!spellsByLevel.has(nivel)) spellsByLevel.set(nivel, []);
+    spellsByLevel.get(nivel).push(spell);
+  }
+
+  const levels = Array.from(spellsByLevel.keys()).sort((a,b)=>a-b);
+  if(!levels.length) return '<p>Nenhuma magia cadastrada.</p>';
+
+  const tabs = levels.map((nivel, index) => {
+    const isActive = index === 0;
+    const tabId = `spell-tab-${nivel}`;
+    const panelId = `spell-panel-${nivel}`;
+    const label = nivel === 0 ? 'Truques' : `Nível ${nivel}`;
+    return `<button class="spell-tab${isActive ? ' active' : ''}" type="button" role="tab" id="${tabId}" aria-controls="${panelId}" aria-selected="${isActive ? 'true' : 'false'}" data-tab-target="${panelId}">${label}</button>`;
+  }).join('');
+
+  const panels = levels.map((nivel, index) => {
+    const isActive = index === 0;
+    const panelId = `spell-panel-${nivel}`;
+    const tabId = `spell-tab-${nivel}`;
+    const items = (spellsByLevel.get(nivel) || []).map(buildSpellItem).join('');
+    return `<div class="spell-panel${isActive ? ' active' : ''}" id="${panelId}" role="tabpanel" aria-labelledby="${tabId}"${isActive ? '' : ' hidden'}>${items || '<p>Nenhuma magia neste nível.</p>'}</div>`;
+  }).join('');
+
+  return `<div class="spell-tabs-wrapper">
+    <div class="spell-tabs" role="tablist" aria-label="Níveis de magia">${tabs}</div>
+    <div class="spell-panels">${panels}</div>
+  </div>`;
+}
+
 function buildMagiasContent(personagem){
   const magias = personagem.magias;
   const slotsHtml = buildSpellSlotsContent(personagem.espacos_magia);
@@ -216,43 +276,11 @@ function buildMagiasContent(personagem){
       const items = magias.map(nome => `<div class="item"><h5>${nome}</h5></div>`).join('');
       return `<div class="modal-magias">${slotsHtml || ''}${items}</div>`;
     }
-    // Array de objetos com detalhes
-    const items = magias.map(m => {
-      const compsColored = Array.isArray(m.componentes) ? m.componentes.map(c=>{
-        const cls = `comp-${String(c).toUpperCase()}`;
-        return `<span class="tag ${cls}">${c}</span>`;
-      }).join(' ') : '';
-      const alcanceText = (typeof m.alcance === 'number') ? `${m.alcance}m` : (typeof m.alcance !== 'undefined' ? String(m.alcance) : '');
-      return `<div class="item">
-        <h5>${m.nome || 'Magia'}</h5>
-        ${m.descricao ? `<p>${m.descricao}</p>` : ''}
-        ${m.dano ? `<p class="prop"><strong>Dano:</strong> ${m.dano}</p>` : ''}
-        ${alcanceText ? `<p class="prop"><strong>Alcance:</strong> ${alcanceText}</p>` : ''}
-        ${m.duracao ? `<p class="prop"><strong>Duração:</strong> ${m.duracao}</p>` : ''}
-        ${compsColored ? `<p>${compsColored}</p>` : ''}
-      </div>`;
-    }).join('');
-    return `<div class="modal-magias">${slotsHtml || ''}${items}</div>`;
+    return `<div class="modal-magias">${slotsHtml || ''}${buildSpellTabsContent(magias)}</div>`;
   }
   const list = ensureArrayFromObjectValues(magias);
   if(!list.length) return slotsHtml ? `<div class="modal-magias">${slotsHtml}<p>Nenhuma magia cadastrada.</p></div>` : '<p>Nenhuma magia cadastrada.</p>';
-  const items = list.map(m => {
-    const comps = Array.isArray(m.componentes) ? m.componentes.map(c=>`<span class="tag">${c}</span>`).join(' ') : '';
-    const compsColored = Array.isArray(m.componentes) ? m.componentes.map(c=>{
-      const cls = `comp-${String(c).toUpperCase()}`;
-      return `<span class="tag ${cls}">${c}</span>`;
-    }).join(' ') : '';
-    const alcanceText = (typeof m.alcance === 'number') ? `${m.alcance}m` : (typeof m.alcance !== 'undefined' ? String(m.alcance) : '');
-    return `<div class="item">
-      <h5>${m.nome || 'Magia'}</h5>
-      ${m.descricao ? `<p>${m.descricao}</p>` : ''}
-      ${m.dano ? `<p class="prop"><strong>Dano:</strong> ${m.dano}</p>` : ''}
-      ${alcanceText ? `<p class="prop"><strong>Alcance:</strong> ${alcanceText}</p>` : ''}
-      ${m.duracao ? `<p class="prop"><strong>Duração:</strong> ${m.duracao}</p>` : ''}
-      ${compsColored ? `<p>${compsColored}</p>` : ''}
-    </div>`;
-  }).join('');
-  return `<div class="modal-magias">${slotsHtml || ''}${items}</div>`;
+  return `<div class="modal-magias">${slotsHtml || ''}${buildSpellTabsContent(list)}</div>`;
 }
 
 // Lista todas as magias do catálogo em ordem alfabética
@@ -453,6 +481,33 @@ function setupModalHandlers(){
     const target = e.target;
     if(target && target.hasAttribute('data-close-modal')){
       closeModal();
+    }
+
+    const tabButton = target && target.closest && target.closest('.spell-tab[data-tab-target]');
+    if(tabButton){
+      const tabList = tabButton.closest('.spell-tabs');
+      if(!tabList) return;
+      const wrapper = tabList.closest('.spell-tabs-wrapper');
+      if(!wrapper) return;
+
+      const allTabs = Array.from(tabList.querySelectorAll('.spell-tab[data-tab-target]'));
+      for(const tab of allTabs){
+        const isActive = tab === tabButton;
+        tab.classList.toggle('active', isActive);
+        tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      }
+
+      const targetId = tabButton.getAttribute('data-tab-target');
+      const allPanels = Array.from(wrapper.querySelectorAll('.spell-panel'));
+      for(const panel of allPanels){
+        const isActive = panel.id === targetId;
+        panel.classList.toggle('active', isActive);
+        if(isActive){
+          panel.removeAttribute('hidden');
+        }else{
+          panel.setAttribute('hidden', 'hidden');
+        }
+      }
     }
   });
   document.addEventListener('keydown', (e)=>{

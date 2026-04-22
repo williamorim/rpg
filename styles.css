@@ -119,6 +119,15 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:"Inter",system-
 .modal-magias .item strong{color:#40e0d0}
 .modal-magias .item p b{color:#9575cd}
 .modal-truques .item h5{font-size:18px}
+.modal-truques .item p.prop{margin-top:10px}
+.spell-tabs-wrapper{display:grid;gap:10px;margin-top:10px}
+.spell-tabs{display:flex;flex-wrap:wrap;gap:8px;padding:2px}
+.spell-tab{appearance:none;border:1px solid var(--border);background:var(--chip);color:var(--muted);padding:6px 10px;border-radius:999px;font-size:13px;font-weight:700;cursor:pointer}
+.spell-tab:hover{border-color:var(--accent);color:var(--text)}
+.spell-tab.active{background:rgba(63,185,80,0.2);border-color:var(--accent-strong);color:var(--text)}
+.spell-panels{display:grid;gap:8px}
+.spell-panel{display:none;gap:8px}
+.spell-panel.active{display:grid}
 .modal-magias .spell-slots{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px}
 .modal-magias .spell-slots h4{margin:0 0 8px 0;font-size:14px;color:var(--muted);font-weight:600}
 .spell-slots-table{width:100%;border-collapse:collapse;border:1px solid var(--border);background:var(--chip);border-radius:8px;overflow:hidden}
