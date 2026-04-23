@@ -98,3 +98,11 @@
 - sintonia_plasmoide:
   - nome: "Sintonia Plasmoide"
   - descricao: "Você está cada vez mais em sintonia com o seu corpo. Seus ataques desarmados agora causam 3 + Modificador de Força de dano."
+
+- defletir_projeteis:
+  - nome: "Defletir Projéteis"
+  - descricao: "Você pode usar sua reação para defletir ou apanhar o projétil quando você é atingido por um ataque de arma à distância. Quando o fizer, o dano que você sofrer do ataque é reduzido em 1d10 + seu modificador de Destreza + seu nível de monge. <br><br> Se o dano for reduzido a 0, você pode apanhar o projétil se ele for pequeno o suficiente para ser segurando em uma mão e você tenha, pelo menos, uma mão livre. Se você apanhar um projétil dessa forma, você pode gastar 1 ponto de chi para realizar uma ataque à distância com a arma ou munição que você acabou de pegar, como parte da mesma reação. Você realiza esse ataque com proficiência, independentemente das armas em que você é proficiente, e o projétil conta como uma arma de monge para o ataque. A distância do ataque do monge é de 6/18 metros."
+
+- forma_selvagem:
+  - nome: "Forma Selvagem"
+  - descricao: "Você pode usar sua ação bônus para se transformar em uma besta que você tenha visto antes. Você pode usar essa característica 2 vezes, até um descanso curto ou longo. Enquanto você estiver transformado pela sua Forma Selvagem, você pode usar uma ação bônus para gastar um espaço de magia e ganhar 1d8 pontos de vida por nível do espaço de magia gasto."

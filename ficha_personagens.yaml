@@ -585,6 +585,7 @@
       - golpe_desarmado_extra
       - defesa_sem_armadura_monge
       - deslocamento_sem_armadura_monge
+      - defletir_projeteis
   - proficiencias: 
       - armas: ["Armas simples", "Espadas curtas"]
       - armaduras: []
@@ -597,7 +598,7 @@
       - anel_rubi
 
 - tortugao:
-  - nome_personagem: "Tortugão"
+  - nome_personagem: "🌙 Tortugão"
   - raca: "Tortle"
   - classe: ["Bárbaro", "Druída"]
   - nivel: 1
@@ -725,10 +726,12 @@
       - defesa_sem_armadura_barbaro
       - mordida
       - furia
+      - forma_selvagem
   - truques:
     - chicote_espinhos
   - magias:
-    - curar_ferimentos
+    - amizade_animal
+    - falar_com_animais
   - num_furias: 2
   - dano_furia: 2
   - proficiencias: 

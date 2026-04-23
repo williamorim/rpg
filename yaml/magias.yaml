@@ -68,3 +68,22 @@
     alcance: "Toque"
     componentes: ["V", "S", "M (um pedaço de vidro ou cristal)"]
     duracao: "Concentração, até 1 hora"
+
+- amizade_animal:
+    nome: "Amizade Animal"
+    tipo: "Encantamento"
+    nivel: 1
+    descricao: "Essa magia deixa você convencer uma besta que você não quer prejudicar. Escolha uma besta que você possa ver dentro do alcance. Ela deve ver e ouvir você. Se a Inteligência da besta for 4 ou maior, a magia falha. Do contrário, a besta deve ser bem sucedida num teste de resistência de Sabedoria ou ficará enfeitiçada por você pela duração da magia. Se você ou um dos seus companheiros ferir o alvo, a magia termina."
+    alcance: "Alcance 18 metros"
+    componentes: ["V", "S"]
+    duracao: "Concentração, até 24 horas"
+
+- falar_com_animais:
+    nome: "Falar com Animais"
+    tipo: "Encantamento"
+    nivel: 1
+    descricao: |
+      Você adquire a habilidade de compreender e se comunicar verbalmente com bestas, pela duração. O conhecimento e consciência de muitas bestas é limitado pela inteligência delas mas, no mínimo, as bestas poderão dar informações a você sobre os locais e monstros próximos, incluindo tudo que eles possam perceber ou tenham percebido no dia anterior. Você pode tentar persuadir uma besta a lhe prestar um favor, à critério do Mestre.
+    alcance: "Pessoal"
+    componentes: ["V", "S"]
+    duracao: "Concentração, até 10 minutos"
