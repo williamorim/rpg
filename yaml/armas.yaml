@@ -30,3 +30,11 @@
   - dano: "1d8"
   - tipo_dano: "Concussão"
   - propriedades: ["Versátil (1d10)"]
+
+
+- widowmaker:
+  - nome: "Widowmaker"
+  - dano: "1d10"
+  - tipo_dano: "Perfurante"
+  - propriedades: ["Versátil (1d12)"]
+  - efeito: "Se o alvo do seu ataque tiver 10 ou menos pontos de vida, você ataca com vantagem."

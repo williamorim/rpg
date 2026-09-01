@@ -2,7 +2,7 @@
   - nome_personagem: Flip
   - raca: "Kenku"
   - classe: "Mago"
-  - nivel: 2
+  - nivel: 3
   - idade: 10
   - altura: 1.5
   - peso: 42
@@ -15,7 +15,7 @@
       - "Auran"
   - pontos_vida: 9
   - dado_vida: "1d6"
-  - classe_armadura: 13
+  - classe_armadura: 14
   - bonus_proficiencia: 2
   - habilidades:
       - forca:
@@ -131,16 +131,20 @@
       - silencio
       - onda_trovejante
       - levitacao
+      - escuridao
+      - arma_magica
   - truques:
       - raio_de_gelo
       - toque_arrepiante
+      - raio_de_fogo
+      - rajada_de_veneno
   - proficiencias: 
     - armas: ["Adagas", "Dardos", "Bordões", "Bestas leve"]
     - armaduras: []
     - ferramentas: ["Quaisquer ferramentas que você já viu sendo utilizada"]
   - espacos_magia:
-      - nivel_1: 3
-      - nivel_2: 1
+      - nivel_1: 4
+      - nivel_2: 3
       - nivel_3: 0
       - nivel_4: 0
       - nivel_5: 0
@@ -151,7 +155,7 @@
   - armas:
     - adaga
   - equipamentos:
-      - tunica_velha
+      - manto_sombrio
 
 ## ZORB
 
@@ -159,7 +163,7 @@
   - nome_personagem: "Zorb"
   - raca: "Plasmoide"
   - classe: "Monge"
-  - nivel: 2
+  - nivel: 3
   - idade: 15
   - altura: "0,5 a 3,5m"
   - peso: 76
@@ -303,7 +307,7 @@
   - nome_personagem: "Annika"
   - raca: "Meia-Elfa"
   - classe: "Barda"
-  - nivel: 1
+  - nivel: 3
   - idade: 30
   - altura: "1,62m"
   - peso: 60
@@ -315,7 +319,7 @@
       - "Élfico"
   - pontos_vida: 14
   - dado_vida: "1d8"
-  - classe_armadura: 13
+  - classe_armadura: 16
   - bonus_proficiencia: 2
   - inspiracao: 0
   - habilidades:
@@ -426,16 +430,17 @@
       - visao_escuro
       - ancestral_feerico
       - inspiracao_bardo
+      - aptidao_bardo
   - proficiencias: 
       - armas: ["Armas simples", "Bestas de mão", "Espadas longas", "Espadas curtas", "Rapieiras"]
-      - armaduras: ["Armaduras leves"]
+      - armaduras: ["Armaduras leves", "Armaduras médias", "Escudos"]
       - ferramentas: ["Flauta", "Alaúde", "Lira"]
   - espacos_magia:
-      - nivel_1: 3
-      - nivel_2: 1
+      - nivel_1: 4
+      - nivel_2: 2
       - nivel_3: 0
       - nivel_4: 0
-      - nivel_5: 0
+      - nivel_5: 1
       - nivel_6: 0
       - nivel_7: 0
       - nivel_8: 0
@@ -445,13 +450,16 @@
     - fogo_fadas
     - disfarce
     - invisibilidade
+    - circulo_teletransporte
+    - coroa_da_loucura
   - truques:
     - amizade
     - orientacao
+    - raio_de_fogo
   - armas:
     - rapieira
   - equipamentos:
-    - armadura_acolchoada
+    - brunea
     - flauta_da_annika
 
 # GROTA
@@ -460,7 +468,7 @@
   - nome_personagem: "Grota"
   - raca: "Tabaxi"
   - classe: "Monge"
-  - nivel: 1
+  - nivel: 3
   - idade: 29
   - altura: "1,87m"
   - peso: 60
@@ -601,7 +609,7 @@
   - nome_personagem: "🌙 Tortugão"
   - raca: "Tortle"
   - classe: ["Bárbaro", "Druída"]
-  - nivel: 1
+  - nivel: 3
   - idade: 70
   - altura: "1,70m"
   - peso: 300
@@ -729,9 +737,12 @@
       - forma_selvagem
   - truques:
     - chicote_espinhos
+    - raio_de_gelo
+    - raio_de_fogo
   - magias:
     - amizade_animal
     - falar_com_animais
+    - raio_lunar
   - num_furias: 2
   - dano_furia: 2
   - proficiencias: 
@@ -739,8 +750,8 @@
       - armaduras: ["Armaduras leves", "Armaduras médias", "Escudos"]
       - ferramentas: ["Kit de herbalismo"]
   - espacos_magia:
-      - nivel_1: 3
-      - nivel_2: 1
+      - nivel_1: 4
+      - nivel_2: 3
       - nivel_3: 0
       - nivel_4: 0
       - nivel_5: 0
@@ -750,4 +761,5 @@
       - nivel_9: 0
   - armas:
     - martelo_de_guerra
+    - widowmaker
   - equipamentos:

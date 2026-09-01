@@ -106,3 +106,7 @@
 - forma_selvagem:
   - nome: "Forma Selvagem"
   - descricao: "Você pode usar sua ação bônus para se transformar em uma besta que você tenha visto antes. Você pode usar essa característica 2 vezes, até um descanso curto ou longo. Enquanto você estiver transformado pela sua Forma Selvagem, você pode usar uma ação bônus para gastar um espaço de magia e ganhar 1d8 pontos de vida por nível do espaço de magia gasto."
+
+  - aptidao_bardo:
+    - nome: "Aptidão de Bardo"
+    - descricao: "Você possui proficiência dobrada em Percepção e Enganação."

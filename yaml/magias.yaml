@@ -87,3 +87,52 @@
     alcance: "Pessoal"
     componentes: ["V", "S"]
     duracao: "Concentração, até 10 minutos"
+
+- circulo_teletransporte:
+    nome: "Círculo de Teletransporte"
+    tipo: "Conjuração"
+    nivel: 5
+    descricao: "Você cria um círculo mágico de teletransporte que conecta-se a outro círculo de teletransporte que você já tenha visto. Qualquer criatura que entrar no círculo será instantaneamente transportada para o círculo de destino."
+    alcance: "9 metros"
+    componentes: ["V"]
+    duracao: "Concentração, até 1 minuto"
+
+- escuridao:
+    nome: "Escuridão"
+    tipo: "Evocação"
+    nivel: 2
+    descricao: "Um ponto que você escolher, dentro do alcance, é envolto em escuridão mágica. A escuridão se espalha em um raio de 4.5 metros a partir do ponto e dura enquanto você mantiver a concentração, até 10 minutos. Criaturas com visão no escuro não conseguem ver através da escuridão, e a magia não pode ser dispersa por luz mágica."
+    alcance: 18
+    componentes: ["V", "M"]
+    duracao: "Concentração, até 10 minutos"
+
+- arma_magica:
+    nome: "Arma Mágica"
+    tipo: "Transmutação"
+    nivel: 2
+    descricao: "Você toca uma arma que você possa segurar e a torna mágica até o final da magia. A arma ganha um bônus de +1 em jogadas de ataque e dano."
+    alcance: "Toque"
+    componentes: ["V", "S"]
+    duracao: "Concentração, até 1 hora"
+
+- raio_lunar:
+    nome: "Raio Lunar"
+    tipo: "Evocação"
+    nivel: 2
+    descricao: "Um raio prateado de luz pálida brilha para baixo em um cilindro com 1,5 metro de raio e 12 metros de altura, centrado num ponto dentro do alcance. Até a magia acabar, penumbra preenche o cilindro. <br><br> Quando uma criatura entrar na área da magia pela primeira vez em um turno, ou começar seu turno lá, ela é engolfada por chamas fantasmagóricas que causam dores lancinantes e ela deve realizar um teste de resistência de Constituição. Ela sofre 2d10 de dano radiante se falhar na resistência ou metade desse dano se passar. <br><br> Um metamorfo faz seu teste de resistência com desvantagem. Se ele falhar, ele, também, reverte instantaneamente para sua forma original e não pode assumir uma forma diferente até deixar a luz da magia. <br><br> Em cada um dos seus turnos após conjurar essa magia, você pode usar uma ação para mover o raio 18 metros, em qualquer direção. <br><br> Em Níveis Superiores. Quando você conjurar essa magia usando um espaço de magia de 3° nível ou superior, o dano aumenta em 1d10 para cada nível do espaço acima do 2°."
+    dano: "2d10 de dano radiante"
+    alcance: 36
+    componentes: ["V", "S", "M (várias sementes de qualquer planta lunar e um pedaço de feldspato opalescente)"]
+    duracao: "Concentração, até 1 minuto"
+
+- coroa_da_loucura:
+    nome: "Coroa da Loucura"
+    tipo: "Encantamento"
+    nivel: 2
+    descricao: "Um humanoide, à sua escolha, que você possa ver dentro do alcance, deve ser bem sucedido num teste de resistência de Sabedoria ou ficará enfeitiçado por você pela duração. Enquanto o alvo estiver enfeitiçado dessa forma, uma coroa retorcida de ferro denteado aparece na cabeça dele e a loucura brilha em seus olhos. <br><br> A criatura enfeitiçada deve usar sua ação antes de se mover, em cada um dos turnos dela, para realizar um ataque corpo-a-corpo contra uma criatura, diferente de si mesma, que você escolher mentalmente. O alvo pode agir normalmente no turno dele se você não escolher uma criatura ou se você não estiver dentro do alcance. <br><br> Nos seus turnos subsequentes, você deve usar sua ação para manter o controle sobre o alvo, ou a magia termina. Igualmente, o alvo pode realizar um teste de resistência de Sabedoria no final de cada um dos turnos dele. Se obtiver sucesso, a magia termina."
+    alcance: 36
+    componentes: ["V", "S"]
+    duracao: "Concentração, até 1 minuto"
+
+
+  

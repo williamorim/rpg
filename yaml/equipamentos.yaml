@@ -14,7 +14,7 @@
   - nome: "Flauta da Annika"
   - Efeitos:
     - Você pode tocar a sua flauta para prender a atenção de criaturas próximas por até 1 minuto. A cada 15 segundos, a criatura deve fazer um teste de Inteligência (CD 12) para resistir ao efeito. <br><br>
-    # - Você pode tocar a sua flauta para conceder os benefícios do truque "Orientação" a uma criatura até que escutou a música.
+    - Você pode tocar a sua flauta para conceder os benefícios do truque "Orientação" a uma criatura até que escutou a música.
 
 - tunica_monasterio:
   - nome: "Túnica simples de monastério"
@@ -52,3 +52,14 @@
 
 - anel_rubi:
   - nome: "Anel de Rubi"
+
+- brunea:
+  - nome: "Brunea"
+  - Efeitos:
+    - Classe de armadura: 14 + modificador de Destreza (máx. +2).
+
+
+- manto_sombrio:
+  - nome: "Manto Sombrio"
+  - Efeitos:
+    - Se uma magia matar pelo menos um dos seres atingidos, você recupera o espaço de magia utilizado. +1 de CA.

@@ -37,3 +37,21 @@
   - dano: "1d8 de dano necrótico"
   - alcance: "Toque"
   - componentes: ["V", "S"]
+
+
+  - raio_de_fogo:
+    - nome: "Raio de Fogo"
+    - tipo: "Evocação"
+    - descricao: "Uma rajada de chamas irrompe de sua mão em direção a uma criatura dentro do alcance. Realize um ataque à distância com magia contra o alvo. Se atingir, ele sofre 1d10 de dano de fogo. <br><br>O dano da magia aumenta em 1d10 quando você alcança o 5° nível (2d10), 11° nível (3d10) e 17° nível (4d10)."
+    - dano: "1d10 de dano de fogo"
+    - alcance: 36
+    - componentes: ["V", "S"]
+
+  - rajada_de_veneno:
+    - nome: "Rajada de Veneno"
+    - tipo: "Necromancia"
+    - descricao: "Você ergue sua mão em direção de uma criatura que você possa ver, dentro do alcance e projeta um sopro de gás tóxico da sua palma. A criatura deve ser bem sucedida num teste de resistência de Constituição ou sofrerá 1d12 de dano de veneno. <br><br>O dano da magia aumenta em 1d12 quando você alcança o 5° nível (2d12), 11° nível (3d12) e 17° nível (4d12)."
+    - dano: "1d12 de dano de veneno"
+    - alcance: 3
+    - componentes: ["V", "S"]
+    
